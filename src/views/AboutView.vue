@@ -1,5 +1,14 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h5>Basic</h5>
+        <Button label="Submit"> </Button>
+        <Button label="Disabled" disabled="disabled" />
+        <Button label="Link" class="p-button-link" />
   </div>
 </template>
+
+<script>
+export default {
+  
+}
+</script>
