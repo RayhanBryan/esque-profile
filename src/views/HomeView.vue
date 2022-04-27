@@ -3,6 +3,7 @@
     <home-jumbotron />
     <home-about />
     <home-visi-misi />
+    <home-value />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import HomeJumbotron from '@/components/HomeJumbotron.vue'
 import HomeAbout from '@/components/HomeAbout.vue'
 import HomeVisiMisi from '@/components/HomeVisiMisi.vue'
+import HomeValue from '@/components/HomeValue.vue'
 
 export default {
   name: 'HomeView',
@@ -19,7 +21,8 @@ export default {
     HelloWorld,
     HomeJumbotron,
     HomeAbout,
-    HomeVisiMisi
+    HomeVisiMisi,
+    HomeValue
   }
 }
 </script>
