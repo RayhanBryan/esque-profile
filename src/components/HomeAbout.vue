@@ -20,7 +20,7 @@ Memulai timbul pertamanya di Daerah Istimewa Yogyakarta, ESQUE terus mengembangk
         color: white;
     }
 
-    @media screen and (max-width: 480px) {
+    /* @media screen and (max-width: 480px) {
         p {
             font-size: 10px;
         }
@@ -28,7 +28,7 @@ Memulai timbul pertamanya di Daerah Istimewa Yogyakarta, ESQUE terus mengembangk
         h1 {
             font-size: 20px;
         }
-    }
+    } */
 </style>
 
 <script>

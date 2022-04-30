@@ -19,7 +19,7 @@
     .grid {
         color: #00535B;
     }
-     @media screen and (max-width: 480px) {
+     /* @media screen and (max-width: 480px) {
         p {
             font-size: 10px;
         }
@@ -31,7 +31,7 @@
         h1 {
             font-size: 20px;
         }
-    }
+    } */
 </style>
 
 <script>
