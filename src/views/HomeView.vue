@@ -5,6 +5,8 @@
     <home-visi-misi />
     <home-value />
     <home-achievement />
+    <home-history />
+    <home-expansion />
   </div>
 </template>
 
@@ -16,6 +18,8 @@ import HomeAbout from '@/components/HomeAbout.vue'
 import HomeVisiMisi from '@/components/HomeVisiMisi.vue'
 import HomeValue from '@/components/HomeValue.vue'
 import HomeAchievement from '@/components/HomeAchievement.vue'
+import HomeHistory from '@/components/HomeHistory.vue'
+import HomeExpansion from '@/components/HomeExpansion.vue'
 
 export default {
   name: 'HomeView',
@@ -25,7 +29,11 @@ export default {
     HomeAbout,
     HomeVisiMisi,
     HomeValue,
-    HomeAchievement
+    HomeAchievement,
+    HomeHistory,
+    HomeExpansion
   }
 }
 </script>
+,
+    HomeExpansion

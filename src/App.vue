@@ -1,6 +1,6 @@
 <template>
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
-  <div>
+  <div class="px-0">
     <Menubar :model="items" class="menu">
       <template #start>
         <img alt="logo" src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" height="40"
@@ -69,6 +69,7 @@
 </style>
 
 <script>
+
   export default {
     data() {
       return {
@@ -104,6 +105,11 @@
           },
         ]
       }
+    },
+
+    mounted() {
+      AOS.init();
     }
+    
   }
 </script>

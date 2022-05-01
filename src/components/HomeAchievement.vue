@@ -26,6 +26,9 @@
 </template>
 
 <style scoped>
+    .grid {
+        margin-bottom: 10%;
+    }
     .title {
         border-bottom: 100px;
         margin-bottom: 50px;

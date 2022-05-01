@@ -7,7 +7,11 @@ import PrimeVue from 'primevue/config';
 import Button from 'primevue/button';
 import Menubar from 'primevue/menubar';
 import Image from 'primevue/image';
+import AOS from 'aos'
+import Timeline from 'primevue/timeline';
+import Card from 'primevue/card';
 
+import 'aos/dist/aos.css'
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
 import 'primeicons/primeicons.css'                           //icons
@@ -26,6 +30,9 @@ const app = createApp(App);
 app.component('Button', Button);
 app.component('Menubar', Menubar);
 app.component('Image', Image);
+app.component('Timeline', Timeline);
+app.component('Card', Card);
 app.use(PrimeVue);
-app.use(router).mount('#app')
+app.use(router);
+app.mount('#app')
 
