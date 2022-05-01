@@ -11,7 +11,7 @@
                     </span>
                 </template>
                 <template #content="slotProps">
-                    <Card style="background-color: #00A6A9; color: white;">
+                    <Card data-aos="zoom-in" style="background-color: #00A6A9; color: white;">
                         <template #title>
                             {{slotProps.item.date}}
                         </template>
@@ -93,6 +93,9 @@
                     "2020", "2021", "2022", "2023"
                 ]
             }
-        }
+        },
+        mounted(){
+        AOS.init();
+    }
     }
 </script>

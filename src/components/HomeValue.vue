@@ -25,7 +25,8 @@
     .grid {
         background: #00A6A9;
         color: white;
-        padding: 0 200px;
+        padding-left: 200px;
+        padding-right: 200px;
     }
     .row-title {
         margin-top: 2%;
@@ -58,7 +59,6 @@
 
         @media screen and (max-width: 960px) {
             .row-box {
-                margin: auto;
                 justify-self: center;
             }
             .grid {
