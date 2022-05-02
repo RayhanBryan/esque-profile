@@ -12,7 +12,6 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import HomeJumbotron from '@/components/HomeJumbotron.vue'
 import HomeAbout from '@/components/HomeAbout.vue'
 import HomeVisiMisi from '@/components/HomeVisiMisi.vue'
@@ -24,7 +23,6 @@ import HomeExpansion from '@/components/HomeExpansion.vue'
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld,
     HomeJumbotron,
     HomeAbout,
     HomeVisiMisi,
@@ -35,5 +33,3 @@ export default {
   }
 }
 </script>
-,
-    HomeExpansion
