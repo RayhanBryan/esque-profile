@@ -3,6 +3,7 @@ package com.web.blog.backend.controller;
 import java.io.IOException;
 
 import com.web.blog.backend.entity.Blog;
+import com.web.blog.backend.repository.BlogRepository;
 import com.web.blog.backend.service.BlogService;
 import com.web.blog.backend.service.FileUploadUtil;
 import com.web.blog.backend.util.DataResponse;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.view.RedirectView;
 
 @CrossOrigin
 @RestController
@@ -29,6 +31,9 @@ import org.springframework.web.multipart.MultipartFile;
 public class BlogController {
     @Autowired
     BlogService blogService;
+
+    @Autowired
+    BlogRepository blogRepository;
 
     // get
     @GetMapping(path = "/findAll")
@@ -55,13 +60,14 @@ public class BlogController {
 
     // post&put
     @PostMapping(path = "/post")
-    public DataResponse<BlogWrapper> post(@RequestBody BlogWrapper wrapper,
+    public RedirectView saveBlog(Blog blog,
             @RequestParam("image") MultipartFile multipartFile) throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        wrapper.setUrl(fileName);
-        String uploadDir = "blog-photos/" + wrapper.getBlogId();
+        blog.setUrl(fileName);
+        Blog savedBlog = blogRepository.save(blog);
+        String uploadDir = "blog-photos/" + savedBlog.getBlogId();
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-        return new DataResponse<BlogWrapper>(blogService.save(wrapper));
+        return new RedirectView("/post", true);
     }
 
     @PutMapping(path = "/update")
