@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class BlogService {
+
     @Autowired
     BlogRepository blogRepository;
 
@@ -31,7 +32,6 @@ public class BlogService {
         if (wrapper.getBlogId() != null) {
             entity = blogRepository.getById(wrapper.getBlogId());
         }
-        entity.setUrl(wrapper.getUrl());
         entity.setTitle(wrapper.getTitle());
         entity.setTextBlog(wrapper.getTextBlog());
         return entity;
