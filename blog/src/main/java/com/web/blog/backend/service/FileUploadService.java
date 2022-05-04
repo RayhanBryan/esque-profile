@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUploadService {
 
     public void uploadFile(MultipartFile multipartFile) throws IllegalStateException, IOException {
-        multipartFile.transferTo(new File("C:\\Users\\E7450\\Documents\\g\\esque-profile\\src\\assets\\blog\\"
+        multipartFile.transferTo(new File("D:\\Vue-Project\\esque-profile\\src\\assets\\"
                 + multipartFile.getOriginalFilename()));
     }
 }

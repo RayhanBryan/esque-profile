@@ -10,6 +10,11 @@ import Image from 'primevue/image';
 import AOS from 'aos'
 import Timeline from 'primevue/timeline';
 import Card from 'primevue/card';
+import InputText from 'primevue/inputtext';
+import Textarea from 'primevue/textarea';
+import FileUpload from 'primevue/fileupload';
+import ToastService from 'primevue/toastservice';
+import Toast from 'primevue/toast';
 
 import 'aos/dist/aos.css'
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
@@ -32,7 +37,12 @@ app.component('Menubar', Menubar);
 app.component('Image', Image);
 app.component('Timeline', Timeline);
 app.component('Card', Card);
+app.component('InputText', InputText);
+app.component('Textarea', Textarea);
+app.component('FileUpload', FileUpload);
+app.component('Toast', Toast);
 app.use(PrimeVue);
 app.use(router);
+app.use(ToastService);
 app.mount('#app')
 
