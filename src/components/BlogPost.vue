@@ -13,18 +13,18 @@
                 <p>Drag and drop files to here to upload.</p>
             </template>
         </FileUpload> -->
-        <input type="file" id="image" name="image" accept="image/png, image/jpeg" @change="onChange">
+        <input type="file" id="image" name="image" accept="image/png, image/jpeg" @change="onChange(this.value)">
             <Toast />
         </div>
-        <div class="col-">
+        <div class="col-12">
             <Button label="Post now" style="background-color: #FFC800" @click="onUpload"/>
         </div>
-
+<!--
         <FileUpload name="demo[]" url="http://localhost:9090/blog/file" @upload="onUploadImage" :multiple="true" accept="image/*" :maxFileSize="1000000">
             <template #empty>
                 <p>Drag and drop files to here to upload.</p>
             </template>
-        </FileUpload>
+        </FileUpload> -->
     </div>
 
 </template>
@@ -45,7 +45,7 @@ export default {
             newPost: {
                 title: '',
                 textBlog: '',
-                url: '',
+                url: 'https://i.ibb.co/f8JZrSS/Ardan.jpg',
             },
         }
     },
@@ -62,12 +62,19 @@ export default {
             })
         },
 
-        onChange() {
-            console.log(event.target.files[0].name)
-            this.newPost.url = event.target.files[0].name
+        onChange(element) {
+            // var file = element.target.files[0];
+            var path = document.getElementById('image').value
+            console.log(path, ' ini path')
+            // var reader = new FileReader();
+            // reader.onloadend = function() {
+            //     console.log('RESULT', reader.result)
+            //     this.image = reader.result
+            // }
+            // reader.readAsDataURL(file);
         },
 
-        onUploadImage(){
+        uploadImage() {
 
         }
     }
