@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
   <navbar />
   <router-view />
+  <footer-temp />
 </template>
 
 <style>
@@ -18,10 +19,11 @@
 </style>
 
 <script>
+import FooterTemp from './components/FooterTemp.vue';
 import Navbar from './components/Navbar.vue';
 
   export default {
-  components: { Navbar },
+  components: { Navbar, FooterTemp },
 
 
     mounted() {

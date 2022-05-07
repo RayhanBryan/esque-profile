@@ -22,7 +22,8 @@
 <style scoped>
     .grid {
         background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 62%, rgba(198,217,219,1) 84%, rgba(0,83,91,1) 100%);        padding-bottom: 200px;
+background: linear-gradient(180deg, rgba(255,255,255,1) 62%, rgba(198,217,219,1) 84%, rgba(0,166,169,1) 100%);
+padding-bottom: 200px;
     }
     .title {
         border-bottom: 100px;
