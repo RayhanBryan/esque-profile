@@ -1,7 +1,7 @@
 <template>
       <div class="grid">
           <div class="col-12 p-0">
-    <Menubar :model="items" class="menu">
+    <Menubar :model="items" class="menu" style="float: inline-end;">
       <template #start>
         <img alt="logo" src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" height="40"
           class="mr-2">
@@ -22,7 +22,7 @@
 
   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
     color: #6c757d;
-    display: none;
+    display: none !important;
   }
   .p-menubar ul {
     margin: 0;
@@ -44,6 +44,10 @@
 ::v-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
     color: #00A6A9 !important;
     font-weight: 700;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    float: right !important;
 }
 
 .p-menubar ul li{

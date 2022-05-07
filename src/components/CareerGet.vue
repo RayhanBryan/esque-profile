@@ -32,12 +32,12 @@ wujud pemenuhan Kesehatan seluruh ESQUE SQUAD.
 </p>
         </div>
         <div class="col-12 lg:col-6 p-0" style="background-color: #00A6A9;">
-            <img src="../assets/get1.png" alt="" style="width: 100%; height: 100%;">
+            <img src="../assets/get2.png" alt="" style="width: 100%; height: 100%;">
         </div>
     </div>
     <div class="grid px-0">
         <div class="col-12 lg:col-6 p-0">
-            <img src="../assets/get1.png" alt="" style="width: 100%; height: 100%;">
+            <img src="../assets/get3.png" alt="" style="width: 100%; height: 100%;">
         </div>
         <div class="col-12 lg:col-6 px-0 text-center" style="background-color: #00A6A9; color: white;">
             <h2>WORK LIFE INTERGRATION</h2>
