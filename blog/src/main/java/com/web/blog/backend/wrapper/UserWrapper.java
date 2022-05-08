@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserWrapper {
     private Long userId;
-    private String username;
+    private String userName;
     private String password;
 }

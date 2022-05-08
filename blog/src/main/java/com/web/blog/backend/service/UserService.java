@@ -28,7 +28,7 @@ public class UserService {
         if (wrapper.getUserId() != null) {
             entity = userRepository.getById(wrapper.getUserId());
         }
-        entity.setUsername(wrapper.getUsername());
+        entity.setUserName(wrapper.getUserName());
         entity.setPassword(wrapper.getPassword());
         return entity;
     }
@@ -36,7 +36,7 @@ public class UserService {
     private UserWrapper toWrapper(User entity) {
         UserWrapper wrapper = new UserWrapper();
         wrapper.setUserId(entity.getUserId());
-        wrapper.setUsername(entity.getUsername());
+        wrapper.setUserName(entity.getUserName());
         wrapper.setPassword(entity.getPassword());
         return wrapper;
     }
@@ -59,6 +59,10 @@ public class UserService {
     // get
     public List<UserWrapper> findAll() {
         return toWrapperList(userRepository.findAll(Sort.by("userId").ascending()));
+    }
+
+    public List<UserWrapper> findByUserName(String userName) {
+        return toWrapperList(userRepository.findByUserNameIgnoreCaseContaining(userName));
     }
 
     public PaginationList<UserWrapper, User> findAll(int page, int size) {
