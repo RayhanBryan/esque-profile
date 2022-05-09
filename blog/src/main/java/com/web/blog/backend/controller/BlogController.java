@@ -15,6 +15,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -58,8 +59,13 @@ public class BlogController {
 
     // post&put
     @PostMapping(path = "/post")
-    public DataResponse<BlogWrapper> post(@RequestBody BlogWrapper wrapper) {
-        return new DataResponse<BlogWrapper>(blogService.save(wrapper));
+    public DataResponse<BlogWrapper> post(@ModelAttribute BlogWrapper wrapper, ModelMap modelMap)
+            throws IllegalStateException, IOException {
+        modelMap.addAttribute("file", wrapper.getMultipartFile());
+        BlogWrapper bWrapper = blogService.save(wrapper);
+        fileUploadService.uploadFile(wrapper.getMultipartFile(), bWrapper.getBlogId());
+        return new DataResponse<BlogWrapper>(bWrapper);
+
     }
 
     @PutMapping(path = "/update")
@@ -72,10 +78,10 @@ public class BlogController {
     }
 
     @PostMapping(value = "/uploadFile")
-    public String submit(@RequestParam("file") MultipartFile file, ModelMap modelMap)
+    public String submit(@RequestParam("id") Long blogId, @RequestParam("file") MultipartFile file, ModelMap modelMap)
             throws IllegalStateException, IOException {
         modelMap.addAttribute("file", file);
-        fileUploadService.uploadFile(file);
+        fileUploadService.uploadFile(file, blogId);
         return "fileUploadView";
     }
 

@@ -12,8 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Transactional
 public class FileUploadService {
 
-    public void uploadFile(MultipartFile file) throws IllegalStateException, IOException {
-        File f = new File("./src/assets/blog/" + file.getOriginalFilename());
+    public void uploadFile(MultipartFile file, Long blogId) throws IllegalStateException, IOException {
+        File f = new File("./src/assets/blog/" + blogId + ".jpg");
         f.createNewFile();
         FileOutputStream output = new FileOutputStream(f);
         output.write(file.getBytes());
