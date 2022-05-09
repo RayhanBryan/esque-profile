@@ -3,8 +3,8 @@
           <div class="col-12 p-0">
     <Menubar :model="items" class="menu" style="float: inline-end;">
       <template #start>
-        <img alt="logo" src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" height="40"
-          class="mr-2">
+        <img alt="logo" src="../assets/logo-navbar.png" height="40"
+          class="m-2">
       </template>
       <template #end>
   

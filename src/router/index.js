@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CareerView from '../views/CareerView.vue'
 import BlogView from '../views/BlogView.vue'
 import AdminView from '../views/AdminView.vue'
+import ActivityView from '../views/ActivityView.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component: AdminView
+  },
+  {
+    path: '/activity',
+    name: 'activity',
+    component: ActivityView
   }
 ]
 

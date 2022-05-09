@@ -16,6 +16,10 @@ import FileUpload from 'primevue/fileupload';
 import ToastService from 'primevue/toastservice';
 import Toast from 'primevue/toast';
 import Dialog from 'primevue/dialog';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import ColumnGroup from 'primevue/columngroup';     //optional for column grouping
+import Row from 'primevue/row';         
 
 import 'aos/dist/aos.css'
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
@@ -43,6 +47,8 @@ app.component('Textarea', Textarea);
 app.component('FileUpload', FileUpload);
 app.component('Toast', Toast);
 app.component('Dialog', Dialog);
+app.component('DataTable', DataTable);
+app.component('Column', Column);
 app.use(PrimeVue);
 app.use(router);
 app.use(ToastService);
