@@ -81,7 +81,9 @@ public class BlogService {
 
     // Create and Update
     public BlogWrapper save(BlogWrapper wrapper) {
-        Blog blog = blogRepository.save(toEntity(wrapper));
+        Blog blogSave = blogRepository.save(toEntity(wrapper));
+        blogSave.setUrl("assets/blog" + blogSave.getBlogId() + ".jpg");
+        Blog blog = blogRepository.save(blogSave);
         return toWrapper(blog);
     }
 
