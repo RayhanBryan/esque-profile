@@ -1,13 +1,17 @@
 package com.web.blog.backend.controller;
 
+import java.io.IOException;
+
 import com.web.blog.backend.entity.Blog;
 import com.web.blog.backend.service.BlogService;
+import com.web.blog.backend.service.FileUploadService;
 import com.web.blog.backend.util.DataResponse;
 import com.web.blog.backend.util.DataResponseList;
 import com.web.blog.backend.util.DataResponsePagination;
 import com.web.blog.backend.wrapper.BlogWrapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @CrossOrigin
 @RestController
@@ -24,6 +29,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class BlogController {
     @Autowired
     BlogService blogService;
+
+    @Autowired
+    FileUploadService fileUploadService;
 
     // get
     @GetMapping(path = "/findAll")
@@ -61,6 +69,14 @@ public class BlogController {
         } catch (Exception e) {
             return new DataResponse<BlogWrapper>(false, "Blog tidak ditemukan: " + wrapper.getBlogId());
         }
+    }
+
+    @PostMapping(value = "/uploadFile")
+    public String submit(@RequestParam("file") MultipartFile file, ModelMap modelMap)
+            throws IllegalStateException, IOException {
+        modelMap.addAttribute("file", file);
+        fileUploadService.uploadFile(file);
+        return "fileUploadView";
     }
 
     // delete

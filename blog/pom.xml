@@ -16,7 +16,6 @@
 		<java.version>8</java.version>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
