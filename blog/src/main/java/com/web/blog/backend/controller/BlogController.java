@@ -15,7 +15,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -59,12 +58,12 @@ public class BlogController {
 
     // post&put
     @PostMapping(path = "/post")
-    public DataResponse<BlogWrapper> post(@ModelAttribute BlogWrapper wrapper, ModelMap modelMap)
-            throws IllegalStateException, IOException {
-        modelMap.addAttribute("file", wrapper.getMultipartFile());
-        BlogWrapper bWrapper = blogService.save(wrapper);
-        fileUploadService.uploadFile(wrapper.getMultipartFile(), bWrapper.getBlogId());
-        return new DataResponse<BlogWrapper>(bWrapper);
+    public DataResponse<BlogWrapper> post(@RequestBody BlogWrapper wrapper) {
+        try {
+            return new DataResponse<BlogWrapper>(blogService.save(wrapper));
+        } catch (Exception e) {
+            return new DataResponse<BlogWrapper>(false, "Blog tidak ditemukan: " + wrapper.getBlogId());
+        }
 
     }
 
@@ -82,7 +81,7 @@ public class BlogController {
             throws IllegalStateException, IOException {
         modelMap.addAttribute("file", file);
         fileUploadService.uploadFile(file, blogId);
-        return "fileUploadView";
+        return null;
     }
 
     // delete

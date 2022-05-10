@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.web.blog.backend.entity.Blog;
 import com.web.blog.backend.exception.BusinessException;
-import com.web.blog.backend.repository.BlogRepository;
-import com.web.blog.backend.repository.UserRepository;
+import com.web.blog.backend.service.repository.BlogRepository;
+import com.web.blog.backend.service.repository.UserRepository;
 import com.web.blog.backend.util.PaginationList;
 import com.web.blog.backend.wrapper.BlogWrapper;
 
@@ -82,7 +82,7 @@ public class BlogService {
     // Create and Update
     public BlogWrapper save(BlogWrapper wrapper) {
         Blog blogSave = blogRepository.save(toEntity(wrapper));
-        blogSave.setUrl("assets/blog" + blogSave.getBlogId() + ".jpg");
+        blogSave.setUrl("assets/blog/" + blogSave.getBlogId() + ".jpg");
         Blog blog = blogRepository.save(blogSave);
         return toWrapper(blog);
     }

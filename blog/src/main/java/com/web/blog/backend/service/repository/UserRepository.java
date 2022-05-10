@@ -1,4 +1,4 @@
-package com.web.blog.backend.repository;
+package com.web.blog.backend.service.repository;
 
 import java.util.List;
 

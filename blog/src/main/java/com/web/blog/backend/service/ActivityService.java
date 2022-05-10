@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.web.blog.backend.entity.Activity;
 import com.web.blog.backend.exception.BusinessException;
-import com.web.blog.backend.repository.ActivityRepository;
+import com.web.blog.backend.service.repository.ActivityRepository;
 import com.web.blog.backend.util.PaginationList;
 import com.web.blog.backend.wrapper.ActivityWrapper;
 

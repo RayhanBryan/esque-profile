@@ -2,8 +2,6 @@ package com.web.blog.backend.wrapper;
 
 import java.io.Serializable;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,5 +12,5 @@ public class BlogWrapper implements Serializable {
     private String url;
     private String title;
     private String textBlog;
-    private MultipartFile multipartFile;
+    // private MultipartFile multipartFile;
 }
