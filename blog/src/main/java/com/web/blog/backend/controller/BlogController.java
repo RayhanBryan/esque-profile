@@ -77,7 +77,7 @@ public class BlogController {
     }
 
     @PostMapping(value = "/uploadFile")
-    public String submit(@RequestParam("id") Long blogId, @RequestParam("file") MultipartFile file, ModelMap modelMap)
+    public String submit(@RequestParam("id") Long blogId, @RequestBody MultipartFile file, ModelMap modelMap)
             throws IllegalStateException, IOException {
         modelMap.addAttribute("file", file);
         fileUploadService.uploadFile(file, blogId);
