@@ -63,6 +63,10 @@ public class ActivityService {
         List<Activity> activityList = activityRepository.findAll();
         return toWrapperList(activityList);
     }
+    public List<ActivityWrapper> findAllOrderBy(){
+        List<Activity> activityList = activityRepository.findAllByOrderByActivityIdDesc();
+        return  toWrapperList(activityList);
+    }
 
     // Retrieve single data
     public ActivityWrapper getactivityById(Long activityId) {

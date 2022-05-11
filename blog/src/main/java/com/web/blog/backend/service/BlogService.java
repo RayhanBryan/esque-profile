@@ -68,7 +68,7 @@ public class BlogService {
         return toWrapperList(blogList);
     }
     public List<BlogWrapper> findAllOrderBy(){
-        List<Blog> blogList = blogRepository.findAllByOrderByBlogId();
+        List<Blog> blogList = blogRepository.findAllByOrderByBlogIdDesc();
         return toWrapperList(blogList);
     }
 

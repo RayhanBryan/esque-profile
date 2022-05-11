@@ -28,20 +28,25 @@ public class ActivityController {
     // get
     @GetMapping(path = "/findAll")
     public DataResponseList<ActivityWrapper> findAll() {
-        return new DataResponseList<ActivityWrapper>(activityService.findAll());
+        return new DataResponseList<>(activityService.findAll());
+    }
+
+    @GetMapping(path = "/findAllOrderBy")
+    public DataResponseList<ActivityWrapper> findAllOrderBy(){
+        return new DataResponseList<>(activityService.findAllOrderBy());
     }
 
     @GetMapping(path = "/findAllPagination")
     public DataResponsePagination<ActivityWrapper, Activity> findAllPagination(@RequestParam("page") int page,
             @RequestParam("size") int size) {
-        return new DataResponsePagination<ActivityWrapper, Activity>(activityService.findAllWithPagination(page, size));
+        return new DataResponsePagination<>(activityService.findAllWithPagination(page, size));
     }
 
     @GetMapping(path = "/findById")
     public DataResponse<ActivityWrapper> findById(@RequestParam("id") Long id) {
         try {
-            ActivityWrapper hasil = activityService.getactivityById(id);
-            return new DataResponse<ActivityWrapper>(hasil);
+            ActivityWrapper result = activityService.getactivityById(id);
+            return new DataResponse<>(result);
         } catch (Exception e) {
             return new DataResponse<ActivityWrapper>(false, "Activity tidak ditemukan: " + id);
         }
@@ -51,15 +56,15 @@ public class ActivityController {
     // post&put
     @PostMapping(path = "/post")
     public DataResponse<ActivityWrapper> post(@RequestBody ActivityWrapper wrapper) {
-        return new DataResponse<ActivityWrapper>(activityService.save(wrapper));
+        return new DataResponse<>(activityService.save(wrapper));
     }
 
     @PutMapping(path = "/update")
     public DataResponse<ActivityWrapper> update(@RequestBody ActivityWrapper wrapper) {
         try {
-            return new DataResponse<ActivityWrapper>(activityService.save(wrapper));
+            return new DataResponse<>(activityService.save(wrapper));
         } catch (Exception e) {
-            return new DataResponse<ActivityWrapper>(false, "Activity tidak ditemukan: " + wrapper.getActivityId());
+            return new DataResponse<>(false, "Activity tidak ditemukan: " + wrapper.getActivityId());
         }
     }
 
@@ -68,9 +73,9 @@ public class ActivityController {
     public DataResponse<ActivityWrapper> delete(@RequestParam("id") Long id) {
         try {
             activityService.delete(id);
-            return new DataResponse<ActivityWrapper>(true, "Delete Sukses");
+            return new DataResponse<>(true, "Delete Sukses");
         } catch (Exception e) {
-            return new DataResponse<ActivityWrapper>(false, "User tidak ditemukan: " + id);
+            return new DataResponse<>(false, "User tidak ditemukan: " + id);
         }
     }
 }
