@@ -1,4 +1,4 @@
-package com.web.blog.backend.service.repository;
+package com.web.blog.backend.repository;
 
 import com.web.blog.backend.entity.Activity;
 

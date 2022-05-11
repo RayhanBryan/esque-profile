@@ -39,6 +39,9 @@ public class BlogController {
         return new DataResponseList<BlogWrapper>(blogService.findAll());
     }
 
+    @GetMapping(path = "/findAllOrderBy")
+    public DataResponseList<BlogWrapper> findAllOrderBy(){return new DataResponseList<>(blogService.findAllOrderBy()); }
+
     @GetMapping(path = "/findAllPagination")
     public DataResponsePagination<BlogWrapper, Blog> findAllPagination(@RequestParam("page") int page,
             @RequestParam("size") int size) {

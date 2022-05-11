@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.web.blog.backend.entity.Blog;
 import com.web.blog.backend.exception.BusinessException;
-import com.web.blog.backend.service.repository.BlogRepository;
-import com.web.blog.backend.service.repository.UserRepository;
+import com.web.blog.backend.repository.BlogRepository;
+import com.web.blog.backend.repository.UserRepository;
 import com.web.blog.backend.util.PaginationList;
 import com.web.blog.backend.wrapper.BlogWrapper;
 
@@ -65,6 +65,10 @@ public class BlogService {
     // Retrieve list of data
     public List<BlogWrapper> findAll() {
         List<Blog> blogList = blogRepository.findAll();
+        return toWrapperList(blogList);
+    }
+    public List<BlogWrapper> findAllOrderBy(){
+        List<Blog> blogList = blogRepository.findAllByOrderByBlogId();
         return toWrapperList(blogList);
     }
 

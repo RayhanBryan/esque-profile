@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.web.blog.backend.entity.User;
-import com.web.blog.backend.service.repository.UserRepository;
+import com.web.blog.backend.repository.UserRepository;
 import com.web.blog.backend.util.PaginationList;
 import com.web.blog.backend.wrapper.UserWrapper;
 
