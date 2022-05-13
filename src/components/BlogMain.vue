@@ -7,7 +7,7 @@
         <div class="col-12 lg:px-8 px-4">
             <div class="grid content mb-4" v-for="i in blogWrap" :key="i.title">
                 <div class="col-12 lg:col-4">
-                    <img :src="require('/assets/blog/'+ i.blogId + '.jpg')" alt="" style="width: 100%;">
+                    <img :src="i.url" alt="" style="width: 100%;">
                 </div>
                 <div class="col-12 lg:col-8">
                     <h1 class="my-0">{{ i.title }}</h1>
@@ -21,7 +21,7 @@
     <Dialog header="&nbsp" v-model:visible="display" :modal="true" class="dialog">
         <div class="inside-dialog">
             <h1 class="text-center" style="color: #00535B">{{row.title}}</h1>
-            <img :src="'../assets/blog/' + row.blogId + '.jpg'" alt="" style="float: left;" class="lg:mr-2">
+            <img :src="row.url" alt="" style="float: left;" class="lg:mr-2">
             <p class="m-0 dialog" v-html="row.textBlog"></p>
         </div>
     </Dialog>

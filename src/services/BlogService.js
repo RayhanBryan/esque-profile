@@ -1,18 +1,22 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:9090/blog/';
+const BASE_URL = 'https://esque-service.herokuapp.com:443/blog/';
 
 class BlogService{
     getBlog(){
-        return axios.get(BASE_URL + 'findAll')
+        return axios.get(BASE_URL + 'findAllOrderBy')
     }
 
     postBlog(data){
         return axios.post(BASE_URL + 'post', data)
     }
 
-    upload(formData) {
-        return axios.post('https://api.imgbb.com/1/upload', data)
+    uploadImage(data) {
+        return axios.post('https://api.imgbb.com/1/upload?key=c13a2b0c3b26b09d7f26a0f69a7b5cbb', data, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          })
     }
 
     putBlog(data){
@@ -22,6 +26,7 @@ class BlogService{
     postImage(data){
         return axios.post(BASE_URL + 'uploadFile', data)
     }
+
 }
 
 export default new BlogService()

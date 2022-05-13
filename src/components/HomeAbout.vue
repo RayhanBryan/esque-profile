@@ -1,6 +1,6 @@
 <template>
     <div class="grid justify-content-center">
-        <div class="col-12 lg:col-6 text-center lg:my-8">
+        <div class="col-12 lg:col-6 text-center px-4 lg:px-0 lg:my-8">
             <h1 data-aos="zoom-in">ABOUT</h1>
             <p data-aos="zoom-in"> Merupakan brand minuman kekinian dalam naungan PT. Keberkahan Tujuan Utama, ESQUE INDONESIA bergerak di bidang Food & Beverages. Berkomitmen untuk menginspirasi Milenial Indonesia untuk selalu meningkatkan iman, Islam, serta Ihsan, mengembangkan minat dan bakat, dan selalu percaya diri menjadi trendy. (Trendy Drink, Trendy You!)
 <br>

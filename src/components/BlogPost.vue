@@ -1,16 +1,20 @@
 <template>
-    <div class="grid">
-        <div class="col-12">
-            <h1 class="text-center">BLOG CONTROLLER</h1>
-        </div>
-        <div class="col-12">
-            <h2>Title</h2>
-            <InputText type="text" v-model="newPost.title" />
-        </div>
-        <div class="col-12">
-            <h2>Text</h2>
-            <Textarea v-model="newPost.textBlog" :autoResize="true" rows="5" cols="30" />
-        </div>
+    <form enctype="multipart/form-data">
+        <div class="grid">
+            <div class="col-12">
+                <Button label="Logout" style="background-color: #FFC800; float: right;" @click="logout"/>
+            </div>
+            <div class="col-12">
+                <h1 class="text-center">BLOG CONTROLLER</h1>
+            </div>
+            <div class="col-12">
+                <h2>Title</h2>
+                <InputText type="text" v-model="newPost.title" />
+            </div>
+            <div class="col-12">
+                <h2>Text</h2>
+                <Textarea v-model="newPost.textBlog" :autoResize="true" rows="5" cols="30" />
+                </div>
         <!-- <div class="col-12"> -->
             <!-- <FileUpload name="demo[]" url="http://localhost:9090/blog/post" @change="onChange" @upload="onUpload" :multiple="true" accept="image/*" :maxFileSize="1000000">
             <template #empty>
@@ -21,32 +25,32 @@
             <Toast />
         </div> -->
         <div class="col-12">
-            <form method="POST" action="http://localhost:9090/blog/uploadFile" enctype="multipart/form-data">
+            
     <table>
         <tr>
             <td><label path="file">Select a file to upload</label></td>
-            <td><input type="file" name="file" /></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Submit" /></td>
+            <td><input type="file" @change="onChangeBlog" /></td>
         </tr>
     </table>
-</form>
+
         </div>
-        <div class="col-12">
+        <!-- <div class="col-12">
             <h2>Image</h2>
             <InputText type="text" v-model="newPost.url" />
-        </div>
+        </div> -->
+
         <div class="col-12">
-            <Button label="Post now" style="background-color: #FFC800" @click="onUpload"/>
+            <Button label="Post now" style="background-color: #FFC800" @click="onUploadBlog"/>
         </div>
+    </div>
+</form>
 <!--
         <FileUpload name="demo[]" url="http://localhost:9090/blog/file" @upload="onUploadImage" :multiple="true" accept="image/*" :maxFileSize="1000000">
             <template #empty>
                 <p>Drag and drop files to here to upload.</p>
             </template>
         </FileUpload> -->
-    </div>
+    <!-- </div> -->
 
     <div class="grid">
         <div class="col-12">
@@ -82,9 +86,13 @@
             <h2>Text</h2>
             <Textarea v-model="newAct.textActivity" :autoResize="true" rows="5" cols="30" />
         </div>
-        <div class="col-12">
-            <h2>Image</h2>
-            <InputText type="text" v-model="newAct.url" />
+        <div class="col-12">  
+    <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" @change="onChangeAct" /></td>
+        </tr>
+    </table>
         </div>
         <div class="col-12">
             <Button label="Post now" style="background-color: #FFC800" @click="onUploadAct"/>
@@ -105,7 +113,7 @@
             </Column>
             <Column header="Action">
                 <template #body="slotProps">
-                    <Button type="button" icon="pi pi-pencil" @click="openMaximizable(slotProps.data)" />
+                    <Button type="button" icon="pi pi-pencil" @click="openMaximizableAct(slotProps.data)" />
                     <Button type="button" icon="pi pi-trash" class="p-button-danger" />
                 </template>
             </Column>
@@ -117,11 +125,31 @@
             <InputText type="text" v-model="row.title" />
             <h5 class="mb-1">Text</h5>
             <Textarea v-model="row.textBlog" :autoResize="true" rows="10" cols="50" />
-            <h5 class="mb-1">Image</h5>
-            <InputText type="text" v-model="row.url" />
+            <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" @change="onChangeBlog" /></td>
+        </tr>
+    </table>
             <template #footer>
                 <Button label="Cancel" icon="pi pi-times" @click="displayMaximizable=false " class="p-button-text"/>
-                <Button label="Submit" icon="pi pi-check" @click="onEdit(); displayMaximizable=false" autofocus />
+                <Button label="Submit" icon="pi pi-check" @click="onEditBlog(); displayMaximizable=false" autofocus />
+            </template>
+        </Dialog>
+        <Dialog header="&nbsp" v-model:visible="displayMaximizableAct" :style="{width: '50vw'}" :maximizable="true" :modal="true">
+            <h5 class="mb-1">Title</h5>
+            <InputText type="text" v-model="row.title" />
+            <h5 class="mb-1">Text</h5>
+            <Textarea v-model="row.textActivity" :autoResize="true" rows="10" cols="50" />
+            <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" @change="onChangeAct" /></td>
+        </tr>
+    </table>
+            <template #footer>
+                <Button label="Cancel" icon="pi pi-times" @click="displayMaximizableAct=false " class="p-button-text"/>
+                <Button label="Submit" icon="pi pi-check" @click="onEditAct(); displayMaximizableAct=false" autofocus />
             </template>
         </Dialog>
         <Toast />
@@ -141,22 +169,29 @@ export default {
             messages: [],
             title: '',
             text: '',
-            image: '',
+            imageBlog: '',
+            imageAct: '',
             newPost: {
-                title: '',
-                textBlog: '',
-                url: '',
+                
             },
             newAct: {
-                title: '',
-                textActivity: '',
-                url: '',
+                
+            },
+            newImage: {
+                
+            },
+            multipartFile: {
+                image: '',
+            },
+            multipartFileAct: {
+                image: '',
             },
             blogWrap: [{}],
             loading: [false, false, false],
             displayMaximizable: false,
+            displayMaximizableAct: false,
             row: {},
-            actWrap: [{}]
+            actWrap: [{}],
         }
     },
     methods: {
@@ -164,22 +199,36 @@ export default {
             this.$toast.add({severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000});
             console.log('ini data yg diinput: ' ,this.newPost)
             BlogService.postBlog(this.newPost).then((res) => {
-                console.log(res);
+                console.log(res.data.data.blogId, 'ini id blog');
+                this.newImage.file = this.multipartFile;
+                this.newImage.id = res.data.data.blogId;
+                BlogService.postImage(this.newImage)
             }).catch((error) => {
                 console.log(error.response.data)
             })
         },
         onUploadAct(){
-            this.$toast.add({severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000});
-            ActivityService.postActivity(this.newAct);
+            this.multipartFileAct.image = this.imageAct;
+            BlogService.uploadImage(this.multipartFileAct).then((res) => {
+                this.newAct.url = res.data.data.display_url;
+                ActivityService.postActivity(this.newAct);
+                this.$toast.add({severity: 'success', summary: 'Success', detail: 'Activity Added', life: 3000});
+                window.location.reload()
+            })
+            
         },
         load(index) {
             this.loading[index] = true;
             setTimeout(() => this.loading[index] = false, 1000);
         },
-        onUploadImage(file){
-            BlogService.postImage(file).then((res) => {
-                console.log(res)
+        onUploadBlog(){
+            this.multipartFile.image = this.imageBlog;
+            BlogService.uploadImage(this.multipartFile).then((res) => {
+                this.newPost.url = res.data.data.display_url;
+                console.log(this.newPost)
+                BlogService.postBlog(this.newPost);
+                this.$toast.add({severity: 'success', summary: 'Success', detail: 'Blog Added', life: 3000});
+                window.location.reload()
             })
         },
 
@@ -188,24 +237,61 @@ export default {
             this.displayMaximizable = true;
         },
 
-        onChange(element) {
-            // var file = element.target.files[0];
-            var path = document.getElementById('image').value
-            console.log(path, ' ini path')
-            // var reader = new FileReader();
-            // reader.onloadend = function() {
-            //     console.log('RESULT', reader.result)
-            //     this.image = reader.result
-            // }
-            // reader.readAsDataURL(file);
+        openMaximizableAct(row) {
+            this.row = {...row}
+            this.displayMaximizableAct = true;
         },
 
-        onEdit() {
-            
-            BlogService.putBlog(this.row).then((res) => {
-                this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
-                window.location.reload();
-            })
+        onChangeBlog(element) {
+            var file = element.target.files[0];
+            this.imageBlog = file;
+        },
+
+        onChangeAct(element) {
+            var file = element.target.files[0];
+            this.imageAct = file;
+        },
+
+        onEditBlog() {
+            if (this.imageBlog == ''){
+                BlogService.putBlog(this.row).then((res) => {
+                    this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
+                    window.location.reload();
+                })
+            }
+            else {
+                this.multipartFile.image = this.imageBlog;
+                BlogService.uploadImage(this.multipartFile).then((res) => {
+                    this.row.url = res.data.data.display_url;
+                    BlogService.putBlog(this.row).then((res) => {
+                    this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
+                    window.location.reload();
+                })
+                })
+            }
+        },
+
+        onEditAct() {
+            if (this.imageAct == ''){
+                ActivityService.putActivity(this.row).then((res) => {
+                    this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                    window.location.reload();
+                })
+            }
+            else {
+                this.multipartFile.image = this.imageAct;
+                BlogService.uploadImage(this.multipartFile).then((res) => {
+                    this.row.url = res.data.data.display_url;
+                    ActivityService.putActivity(this.row).then((res) => {
+                    this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                    window.location.reload();
+                })
+                })
+            }
+        },
+        logout(){
+            localStorage.removeItem("LoggedUser");
+            this.$router.push('login')
         }
     },
     mounted() {

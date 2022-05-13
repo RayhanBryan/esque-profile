@@ -20,6 +20,7 @@ import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import ColumnGroup from 'primevue/columngroup';     //optional for column grouping
 import Row from 'primevue/row';         
+import Password from 'primevue/password';
 
 import 'aos/dist/aos.css'
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
@@ -49,6 +50,7 @@ app.component('Toast', Toast);
 app.component('Dialog', Dialog);
 app.component('DataTable', DataTable);
 app.component('Column', Column);
+app.component('Password', Password)
 app.use(PrimeVue);
 app.use(router);
 app.use(ToastService);
