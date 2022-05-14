@@ -1,19 +1,19 @@
 <template>
     <div class="grid px-6">
-        <div class="col-12 lg:col-5 lg:text-left text-center">
+        <div class="col-12 lg:col-5 lg:text-left text-center" data-aos="zoom-in" data-aos-duration="2000">
             <h1>We’ll Be There Every Step<br>of the Way</h1>
             <hr>
         </div>
     </div>
     <div class="grid px-6">
-        <div class="col-12 lg:col-6 lg:text-left text-center">
+        <div class="col-12 lg:col-6 lg:text-left text-center" data-aos="zoom-in" data-aos-duration="2000">
             <p>Calling all passionate characters who have value, willingness to learn and develop<br>
                 together in a good vibes environtment. Are you the ‘one’? Enjoy all every proses here</p>
         </div>
     </div>
     <div class="grid justify-content-center">
         <hr class="dashed justify-content-start">
-        <div class="col-12 px-4 lg:px-0 lg:col-2 mx-3 text-center lg:mb-8" v-for="step in steps" :key="step.title">
+        <div class="col-12 px-4 lg:px-0 lg:col-2 mx-3 text-center lg:mb-8" data-aos="zoom-in" data-aos-duration="2000" v-for="step in steps" :key="step.title">
             <img :src="step.logo" alt="">
             <h2>{{ step.title }}</h2>
             <p>{{ step.text }}</p>

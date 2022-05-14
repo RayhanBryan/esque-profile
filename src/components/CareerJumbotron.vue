@@ -3,7 +3,7 @@
         <div class="col-12 px-0">
         <img src="../assets/jumbotron-career.png" alt="" style="width: 100%;">
         <div class="grid justify-content-center text-center"></div>
-        <div class="col-12 p-0">
+        <div class="col-12 p-0"  data-aos="zoom-in" data-aos-duration="2000">
             <div class="text">
             <h1 class="text-center my-0">JOIN US<br>ESQUE SQUAD</h1>
             <h2 class="my-0">FINDING YOUR HAPPINES</h2>
@@ -13,7 +13,7 @@
     </div>
     <div class="grid">
         <div class="col-12 py-0 join-us text-center justify-content-center">
-            <Button label="JOIN US" style="background-color: #FFC800" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
+            <Button data-aos="zoom-in" data-aos-duration="2000" label="JOIN US" style="background-color: #FFC800" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
         </div>
     </div>
 </template>

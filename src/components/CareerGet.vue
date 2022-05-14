@@ -1,12 +1,12 @@
 <template>
-    <div class="grid px-0 justify-content-center">
+    <div class="grid px-0 justify-content-center" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-12 lg:col-4 text-center justify-content-center col-div">
             <div class="title text-center">
                 <h1>WHAT WILL YOU GET</h1>
             </div>
         </div>
     </div>
-    <div class="grid px-0">
+    <div class="grid px-0" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-12 lg:col-6 p-0">
             <img src="../assets/get1.png" alt="" style="width: 100%; height: 100%;">
         </div>
@@ -22,7 +22,7 @@
                 sehingga kehidupan menjadi lebih berkualitas.</p>
         </div>
     </div>
-    <div class="grid px-0 row-2">
+    <div class="grid px-0 row-2" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-12 lg:col-6 px-0 text-center" style="background-color: #00A6A9; color: white;">
             <h2>KESEHATAN</h2>
             <hr>
@@ -35,7 +35,7 @@ wujud pemenuhan Kesehatan seluruh ESQUE SQUAD.
             <img src="../assets/get2.png" alt="" style="width: 100%; height: 100%;">
         </div>
     </div>
-    <div class="grid px-0">
+    <div class="grid px-0" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-12 lg:col-6 p-0">
             <img src="../assets/get3.png" alt="" style="width: 100%; height: 100%;">
         </div>
@@ -82,6 +82,8 @@ wujud pemenuhan Kesehatan seluruh ESQUE SQUAD.
 
 <script>
     export default {
-
+         mounted(){
+        AOS.init();
+    }
     }
 </script>
