@@ -4,6 +4,7 @@
             <h1 style="color: #00535B" data-aos="zoom-in" data-aos-duration="2000">BLOG</h1>
             <hr>
         </div>
+        <ProgressSpinner style="width:50px;height:50px" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s" v-if="loading"/>
         <div class="col-12 lg:px-8 px-4">
             <div class="grid content mb-4" v-for="i in blogWrap" :key="i.title"  data-aos="zoom-in" data-aos-duration="2000">
                 <div class="col-12 lg:col-4">
@@ -108,13 +109,14 @@
                 row: {},
                 regex: '\n',
                 parser: new DOMParser(),
+                loading: true,
             }
         },
         methods: {
             getBlog() {
                 BlogService.getBlog().then((res) => {
                     this.blogWrap = res.data.data
-                    console.log(res)
+                    this.loading = false;
                     console.log(this.blogWrap)
                 })
             },
@@ -127,9 +129,14 @@
                 console.log(this.row.textBlog, 'ini row')
                 this.display = true;
             },
+            loadingFalse(){
+                this.loading=false;
+                this.loadBlog=true;
+                console.log(this.loadBlog, 'ini loadblog')
+            }
         },
         created() {
-            this.getBlog()
+            this.getBlog();
         }
     }
 </script>
