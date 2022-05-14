@@ -11,9 +11,9 @@
             <img src="../assets/get1.png" alt="" style="width: 100%; height: 100%;">
         </div>
         <div class="col-12 lg:col-6 px-0 text-center" style="background-color: #00A6A9; color: white;">
-            <h2>WORK LIFE INTERGRATION</h2>
+            <h2 data-aos="zoom-in" data-aos-duration="2000">WORK LIFE INTERGRATION</h2>
             <hr>
-            <p class="lg:mx-8 mx-5 lg:mt-8">Work Hard, Pray Hard!
+            <p data-aos="zoom-in" data-aos-duration="2000" class="lg:mx-8 mx-5 lg:mt-8">Work Hard, Pray Hard!
                 Kinerja yang optimal memang penting, begitu juga
                 kehidupan seluruh keluarga besar ESQUE INDONESIA,
                 Esque menyediakan fasilitas untuk mengembangkan hobi dan
@@ -24,9 +24,9 @@
     </div>
     <div class="grid px-0 row-2" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-12 lg:col-6 px-0 text-center" style="background-color: #00A6A9; color: white;">
-            <h2>KESEHATAN</h2>
+            <h2 data-aos="zoom-in" data-aos-duration="2000">KESEHATAN</h2>
             <hr>
-            <p class="lg:mx-8 mx-5 lg:mt-8">Kesehatan fisik dan Jiwa seluruh Esque Squad adalah prioritas perusahaan, 
+            <p data-aos="zoom-in" data-aos-duration="2000" class="lg:mx-8 mx-5 lg:mt-8">Kesehatan fisik dan Jiwa seluruh Esque Squad adalah prioritas perusahaan, 
 terdapat asuransi Kesehatan dan Layanan Kesehatan mental sebagai 
 wujud pemenuhan Kesehatan seluruh ESQUE SQUAD.
 </p>
@@ -40,9 +40,9 @@ wujud pemenuhan Kesehatan seluruh ESQUE SQUAD.
             <img src="../assets/get3.png" alt="" style="width: 100%; height: 100%;">
         </div>
         <div class="col-12 lg:col-6 px-0 text-center" style="background-color: #00A6A9; color: white;">
-            <h2>WORK LIFE INTERGRATION</h2>
+            <h2 data-aos="zoom-in" data-aos-duration="2000">WORK LIFE INTERGRATION</h2>
             <hr>
-            <p class="lg:mx-8 mx-5 lg:mt-8">Work Hard, Pray Hard!
+            <p data-aos="zoom-in" data-aos-duration="2000" class="lg:mx-8 mx-5 lg:mt-8">Work Hard, Pray Hard!
                 Kinerja yang optimal memang penting, begitu juga
                 kehidupan seluruh keluarga besar ESQUE INDONESIA,
                 Esque menyediakan fasilitas untuk mengembangkan hobi dan

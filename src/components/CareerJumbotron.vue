@@ -13,7 +13,7 @@
     </div>
     <div class="grid">
         <div class="col-12 py-0 join-us text-center justify-content-center">
-            <Button data-aos="zoom-in" data-aos-duration="2000" label="JOIN US" style="background-color: #FFC800" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
+            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
         </div>
     </div>
 </template>

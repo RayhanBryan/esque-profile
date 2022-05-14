@@ -81,23 +81,23 @@
                         logo: image1
                     },
                     {
-                        title: 'Submit Application',
-                        text: 'The baby step you need to follow first is, of course, you need to send your newest  application such as a resume or even portfolio. Don’t skip this process.',
+                        title: 'Call With Recruiter',
+                        text: 'Willing to wait is also bring good vibes to yourself, we will inform you for further notice, don’t worry!',
                         logo: image2
                     },
                     {
-                        title: 'Submit Application',
-                        text: 'The baby step you need to follow first is, of course, you need to send your newest  application such as a resume or even portfolio. Don’t skip this process.',
+                        title: 'Interview',
+                        text: 'Basic rules to know eac other was through the interview, make sure to be punctual f it held offline and be tidy if it’s an online meeting.',
                         logo: image3
                     },
                     {
-                        title: 'Submit Application',
-                        text: 'The baby step you need to follow first is, of course, you need to send your newest  application such as a resume or even portfolio. Don’t skip this process.',
+                        title: 'Technical Test',
+                        text: 'Yeayy you come this far, the highlight from this process was to getting know your skill even better, fill some good answers here fellas!',
                         logo: image4
                     },
                     {
-                        title: 'Submit Application',
-                        text: 'The baby step you need to follow first is, of course, you need to send your newest  application such as a resume or even portfolio. Don’t skip this process.',
+                        title: 'Get Hired',
+                        text: 'Congratulations, you pass all the tests and now it’s time for the official hiring and onboarding process. Welcome to the team!',
                         logo: image5
                     },
                 ]
