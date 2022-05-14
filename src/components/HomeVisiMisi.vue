@@ -4,12 +4,12 @@
             <h1 data-aos="zoom-in" data-aos-duration="2000">VISI</h1>
             <p data-aos="zoom-in" data-aos-duration="2000">“Menebarkan Kebahagiaan dengan Menjadi Business Opportunity yang Menguntungkan bagi Semua Stakeholder”</p>
             <h1 data-aos="zoom-in" data-aos-duration="2000">MISI</h1>
-            <ol class="text-left">
-                <li data-aos="zoom-in" data-aos-duration="2000">Mengutamakan pelayanan service excellent dan memudahkan Customer dalam menikmati/mendapatkan produk ESQUE.</li>
-                <li data-aos="zoom-in" data-aos-duration="2000">Menciptakan produk yang bervariatif dan berkualitas dengan harga yang terjangkau.</li>
-                <li data-aos="zoom-in" data-aos-duration="2000">Menebarkan kebahagiaan dengan memberikan dukungan/support kepada lingkungan masyarakat yang membutuhkan.</li>
-                <li data-aos="zoom-in" data-aos-duration="2000">Menyediakan dan mensupport seluruh Karyawan untuk bertumbuh dari segi Knowledge & Spiritual.</li>
-                <li data-aos="zoom-in" data-aos-duration="2000">Memastikan dana Investasi dikelola dengan Amanah dan Profesional.</li>
+            <ol  data-aos="zoom-in" data-aos-duration="2000" class="text-left">
+                <li>Mengutamakan pelayanan service excellent dan memudahkan Customer dalam menikmati/mendapatkan produk ESQUE.</li>
+                <li>Menciptakan produk yang bervariatif dan berkualitas dengan harga yang terjangkau.</li>
+                <li>Menebarkan kebahagiaan dengan memberikan dukungan/support kepada lingkungan masyarakat yang membutuhkan.</li>
+                <li>Menyediakan dan mensupport seluruh Karyawan untuk bertumbuh dari segi Knowledge & Spiritual.</li>
+                <li>Memastikan dana Investasi dikelola dengan Amanah dan Profesional.</li>
             </ol>
         </div>
     </div>
