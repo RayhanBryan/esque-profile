@@ -1,6 +1,6 @@
 <template>
     <div class="grid justify-content-center">
-        <div class="col-12 lg:col-3 text-center lg:my-8">
+        <div class="col-12 lg:col-3 text-center lg:my-8" data-aos="zoom-in" data-aos-duration="2000">
             <h1>VISI</h1>
             <p>“Menebarkan Kebahagiaan dengan Menjadi Business Opportunity yang Menguntungkan bagi Semua Stakeholder”</p>
             <h1>MISI</h1>
@@ -36,6 +36,8 @@
 
 <script>
 export default {
-    
+    mounted(){
+        AOS.init();
+    }
 }
 </script>

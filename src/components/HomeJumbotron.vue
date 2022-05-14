@@ -3,7 +3,7 @@
         <div class="col-12 px-0">
         <img src="../assets/jumbotron.png" alt="" style="width: 100%;">
         <div class="grid"></div>
-            <h1>We Take Every Chance <br> We Drop Every Fear. <br> Are you in?</h1>
+            <h1 data-aos="zoom-in" data-aos-duration="2000">We Take Every Chance <br> We Drop Every Fear. <br> Are you in?</h1>
         </div>
     </div>
 </template>
@@ -35,6 +35,8 @@
 
 <script>
     export default {
-
+        mounted(){
+        AOS.init();
+    }
     }
 </script>

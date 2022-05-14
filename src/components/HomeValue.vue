@@ -1,9 +1,9 @@
 <template>
     <div class="grid row-box">
         <div class="col-12 text-center">
-            <h1>COMPANY VALUE</h1>
+            <h1 data-aos="zoom-in" data-aos-duration="2000">COMPANY VALUE</h1>
         </div>
-        <div class="col-12 lg:col-4" v-for="value in values" :key="value.title">
+        <div class="col-12 lg:col-4" v-for="value in values" :key="value.title" data-aos="zoom-in" data-aos-duration="2000">
             <div class="circle text-center">
                         <img :src="value.image" contain style="max-height: 110px;">
                     </div>
@@ -104,5 +104,8 @@ export default {
       },
     ]
   }),
+      mounted(){
+        AOS.init();
+    }
 }
 </script>
