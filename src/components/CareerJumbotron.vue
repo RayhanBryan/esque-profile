@@ -3,7 +3,7 @@
         <div class="col-12 px-0">
         <img src="../assets/jumbotron-career.png" alt="" style="width: 100%;">
         <div class="grid justify-content-center text-center"></div>
-        <div class="col-12 p-0"  data-aos="zoom-in" data-aos-duration="2000">
+        <div class="col-12 p-0">
             <div class="text">
             <h1 class="text-center my-0">JOIN US<br>ESQUE SQUAD</h1>
             <h2 class="my-0">FINDING YOUR HAPPINES</h2>

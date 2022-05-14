@@ -1,7 +1,7 @@
 <template>
     <div class="grid">
         <div class="col-12 lg:px-8 px-4">
-            <div class="grid content mb-4" v-for="(i, index) in actWrap" :key="i.title" :class="(((index+1) % 2) == 0) ? 'act-even' : 'act-odd'">
+            <div class="grid content mb-4" data-aos="zoom-in" data-aos-duration="2000" v-for="(i, index) in actWrap" :key="i.title" :class="(((index+1) % 2) == 0) ? 'act-even' : 'act-odd'">
                 <div class="col-12 lg:col-4">
                     <img :src="i.url" alt="" style="width: 100%;">
                 </div>

@@ -1,11 +1,11 @@
 <template>
     <div class="grid justify-content-center">
         <div class="col-12 text-center">
-            <h1 style="color: #00535B">BLOG</h1>
+            <h1 style="color: #00535B" data-aos="zoom-in" data-aos-duration="2000">BLOG</h1>
             <hr>
         </div>
         <div class="col-12 lg:px-8 px-4">
-            <div class="grid content mb-4" v-for="i in blogWrap" :key="i.title">
+            <div class="grid content mb-4" v-for="i in blogWrap" :key="i.title"  data-aos="zoom-in" data-aos-duration="2000">
                 <div class="col-12 lg:col-4">
                     <img :src="i.url" alt="" style="width: 100%;">
                 </div>

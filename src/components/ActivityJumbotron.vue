@@ -1,7 +1,7 @@
 <template>
     <div class="grid justify-content-center px-0">
         <div class="col-12 text-center px-0">
-            <h1>ESQUE ACTIVITY</h1>
+            <h1  data-aos="zoom-in" data-aos-duration="2000">ESQUE ACTIVITY</h1>
             <img src="../assets/activity-jumbotron.png" alt="" style="width: 100%;">
         </div>
     </div>
