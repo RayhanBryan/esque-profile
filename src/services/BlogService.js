@@ -27,6 +27,9 @@ class BlogService{
         return axios.post(BASE_URL + 'uploadFile', data)
     }
 
+    deleteBlog(id) {
+        return axios.delete(BASE_URL + `delete?id=${id}`)
+    }
 }
 
 export default new BlogService()

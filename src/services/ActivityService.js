@@ -14,6 +14,10 @@ class BlogService{
     putActivity(data){
         return axios.put(BASE_URL + 'update', data)
     }
+
+    deleteActivity(id){
+        return axios.delete(BASE_URL + `delete?id=${id}`)
+    }
 }
 
 export default new BlogService()

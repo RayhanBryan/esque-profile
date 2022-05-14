@@ -68,7 +68,7 @@
             <Column header="Action">
                 <template #body="slotProps">
                     <Button type="button" icon="pi pi-pencil" @click="openMaximizable(slotProps.data)" />
-                    <Button type="button" icon="pi pi-trash" class="p-button-danger" />
+                    <Button type="button" icon="pi pi-trash" @click="deleteBlog(slotProps.data.blogId)" class="p-button-danger" />
                 </template>
             </Column>
         </DataTable>    
@@ -114,7 +114,7 @@
             <Column header="Action">
                 <template #body="slotProps">
                     <Button type="button" icon="pi pi-pencil" @click="openMaximizableAct(slotProps.data)" />
-                    <Button type="button" icon="pi pi-trash" class="p-button-danger" />
+                    <Button type="button" icon="pi pi-trash" @click="deleteAct(slotProps.data.activityId)" class="p-button-danger" />
                 </template>
             </Column>
         </DataTable>    
@@ -153,6 +153,7 @@
             </template>
         </Dialog>
         <Toast />
+        <ConfirmDialog></ConfirmDialog>
 </template>
 
 <style scoped>
@@ -162,6 +163,7 @@
 <script>
 import ActivityService from '@/services/ActivityService';
 import BlogService from '../services/BlogService'
+import ConfirmDialog from 'primevue/confirmdialog';
 
 export default {
     data() {
@@ -292,7 +294,39 @@ export default {
         logout(){
             localStorage.removeItem("LoggedUser");
             this.$router.push('login')
-        }
+        },
+        deleteBlog(id) {
+            this.$confirm.require({
+                message: 'Do you want to delete this record?',
+                header: 'Delete Confirmation',
+                icon: 'pi pi-info-circle',
+                acceptClass: 'p-button-danger',
+                accept: () => {
+                    BlogService.deleteBlog(id);
+                    this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
+                    window.location.reload();
+                },
+                reject: () => {
+                    this.$toast.add({severity:'error', summary:'Rejected', detail:'You have rejected', life: 3000});
+                }
+            });
+        },
+        deleteAct(id) {
+            this.$confirm.require({
+                message: 'Do you want to delete this record?',
+                header: 'Delete Confirmation',
+                icon: 'pi pi-info-circle',
+                acceptClass: 'p-button-danger',
+                accept: () => {
+                    ActivityService.deleteActivity(id);
+                    this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
+                    window.location.reload();
+                },
+                reject: () => {
+                    this.$toast.add({severity:'error', summary:'Rejected', detail:'You have rejected', life: 3000});
+                }
+            });
+        },
     },
     mounted() {
         BlogService.getBlog().then((res) => {
