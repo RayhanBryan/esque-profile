@@ -44,7 +44,7 @@ public class BlogController {
 
     @GetMapping(path = "/findAllPagination")
     public DataResponsePagination<BlogWrapper, Blog> findAllPagination(@RequestParam("page") int page,
-            @RequestParam("size") int size) {
+                                                                       @RequestParam("size") int size) {
         return new DataResponsePagination<BlogWrapper, Blog>(blogService.findAllWithPagination(page, size));
     }
 

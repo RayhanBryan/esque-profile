@@ -79,7 +79,7 @@ public class BlogService {
 
     // Retrieve list of data with pagination
     public PaginationList<BlogWrapper, Blog> findAllWithPagination(int page,
-            int size) {
+                                                                   int size) {
         return toPaginationList(blogRepository.findAll(PageRequest.of(page, size)));
     }
 
