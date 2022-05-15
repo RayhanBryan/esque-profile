@@ -120,6 +120,47 @@
         </DataTable>    
         </div>
     </div>
+    <div class="grid">
+        <div class="col-12">
+            <h1 class="text-center">ACHIEVEMENT CONTROLLER</h1>
+        </div>
+        <div class="col-12">
+            <h2>Title</h2>
+            <InputText type="text" v-model="newAch.title" />
+        </div>
+        <div class="col-12">  
+    <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" @change="onChangeAch" /></td>
+        </tr>
+    </table>
+        </div>
+        <div class="col-12">
+            <Button label="Post now" style="background-color: #FFC800" @click="onUploadAch"/>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-12">
+            <DataTable :value="achWrap" :paginator="true" :rows="4"
+            paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+            :rowsPerPageOptions="[4,10,20]" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords}">
+            <Column field="title" header="Title"></Column>
+            <Column header="Image">
+                <template #body="slotProps">
+                    <img :src="slotProps.data.url" :alt="slotProps.data.image" class="product-image" />
+                </template>
+            </Column>
+            <Column header="Action">
+                <template #body="slotProps">
+                    <Button type="button" icon="pi pi-pencil" @click="openMaximizableAch(slotProps.data)" />
+                    <Button type="button" icon="pi pi-trash" @click="deleteAch(slotProps.data.achievementId)" class="p-button-danger" />
+                </template>
+            </Column>
+        </DataTable>    
+        </div>
+    </div>
     <Dialog header="&nbsp" v-model:visible="displayMaximizable" :style="{width: '50vw'}" :maximizable="true" :modal="true">
             <h5 class="mb-1">Title</h5>
             <InputText type="text" v-model="row.title" />
@@ -152,6 +193,20 @@
                 <Button label="Submit" icon="pi pi-check" @click="onEditAct(); displayMaximizableAct=false" autofocus />
             </template>
         </Dialog>
+        <Dialog header="&nbsp" v-model:visible="displayMaximizableAch" :style="{width: '50vw'}" :maximizable="true" :modal="true">
+            <h5 class="mb-1">Title</h5>
+            <InputText type="text" v-model="row.title" />
+            <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" @change="onChangeAct" /></td>
+        </tr>
+    </table>
+            <template #footer>
+                <Button label="Cancel" icon="pi pi-times" @click="displayMaximizableAct=false " class="p-button-text"/>
+                <Button label="Submit" icon="pi pi-check" @click="onEditAch(); displayMaximizableAct=false" autofocus />
+            </template>
+        </Dialog>
         <Toast />
         <ConfirmDialog></ConfirmDialog>
 </template>
@@ -162,7 +217,8 @@
 
 <script>
 import ActivityService from '@/services/ActivityService';
-import BlogService from '../services/BlogService'
+import BlogService from '../services/BlogService';
+import AchievementService from '../services/AchievementService'
 import ConfirmDialog from 'primevue/confirmdialog';
 
 export default {
@@ -173,11 +229,19 @@ export default {
             text: '',
             imageBlog: '',
             imageAct: '',
+            imageAch: '',
+            imageTeam: '',
             newPost: {
                 
             },
             newAct: {
                 
+            },
+            newAch: {
+
+            },
+            newTeam: {
+
             },
             newImage: {
                 
@@ -188,12 +252,20 @@ export default {
             multipartFileAct: {
                 image: '',
             },
+            multipartFileAch: {
+                image: '',
+            },
+            multipartFileTeam: {
+                image: '',
+            },
             blogWrap: [{}],
             loading: [false, false, false],
             displayMaximizable: false,
             displayMaximizableAct: false,
+            displayMaximizableAch: false,
             row: {},
             actWrap: [{}],
+            achWrap: [{}]
         }
     },
     methods: {
@@ -213,9 +285,27 @@ export default {
             this.multipartFileAct.image = this.imageAct;
             BlogService.uploadImage(this.multipartFileAct).then((res) => {
                 this.newAct.url = res.data.data.display_url;
-                ActivityService.postActivity(this.newAct);
-                this.$toast.add({severity: 'success', summary: 'Success', detail: 'Activity Added', life: 3000});
-                window.location.reload()
+                ActivityService.postActivity(this.newAct).then((res) => {
+                    if (res.status == 200) {
+                        this.$toast.add({severity: 'success', summary: 'Success', detail: 'Activity Added', life: 3000});
+                        window.location.reload()
+                    }
+                })  
+            })
+            
+        },
+        onUploadAch(){
+            this.multipartFileAch.image = this.imageAch;
+            BlogService.uploadImage(this.multipartFileAch).then((res) => {
+                this.newAch.url = res.data.data.display_url;
+                AchievementService.post(this.newAch).then((res) => {
+                    console.log(res);
+                    if (res.status == 200){
+                        this.$toast.add({severity: 'success', summary: 'Success', detail: 'Activity Added', life: 3000});
+                        window.location.reload()
+                    }
+                })
+                
             })
             
         },
@@ -228,9 +318,12 @@ export default {
             BlogService.uploadImage(this.multipartFile).then((res) => {
                 this.newPost.url = res.data.data.display_url;
                 console.log(this.newPost)
-                BlogService.postBlog(this.newPost);
-                this.$toast.add({severity: 'success', summary: 'Success', detail: 'Blog Added', life: 3000});
-                window.location.reload()
+                BlogService.postBlog(this.newPost).then((res) => {
+                    if (res.status == 200) {
+                        this.$toast.add({severity: 'success', summary: 'Success', detail: 'Blog Added', life: 3000});
+                        window.location.reload()
+                    }
+                })
             })
         },
 
@@ -243,6 +336,10 @@ export default {
             this.row = {...row}
             this.displayMaximizableAct = true;
         },
+        openMaximizableAch(row) {
+            this.row = {...row}
+            this.displayMaximizableAch = true;
+        },
 
         onChangeBlog(element) {
             var file = element.target.files[0];
@@ -253,12 +350,18 @@ export default {
             var file = element.target.files[0];
             this.imageAct = file;
         },
+        onChangeAch(element) {
+            var file = element.target.files[0];
+            this.imageAch = file;
+        },
 
         onEditBlog() {
             if (this.imageBlog == ''){
                 BlogService.putBlog(this.row).then((res) => {
-                    this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
-                    window.location.reload();
+                    if (res.status == 200) {
+                        this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
+                        window.location.reload();
+                    }
                 })
             }
             else {
@@ -266,8 +369,10 @@ export default {
                 BlogService.uploadImage(this.multipartFile).then((res) => {
                     this.row.url = res.data.data.display_url;
                     BlogService.putBlog(this.row).then((res) => {
-                    this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
-                    window.location.reload();
+                        if (res.status == 200) {
+                            this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
+                            window.location.reload();
+                        }
                 })
                 })
             }
@@ -276,8 +381,10 @@ export default {
         onEditAct() {
             if (this.imageAct == ''){
                 ActivityService.putActivity(this.row).then((res) => {
-                    this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
-                    window.location.reload();
+                    if (res.status == 200) {
+                        this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                        window.location.reload();
+                    }
                 })
             }
             else {
@@ -285,8 +392,32 @@ export default {
                 BlogService.uploadImage(this.multipartFile).then((res) => {
                     this.row.url = res.data.data.display_url;
                     ActivityService.putActivity(this.row).then((res) => {
-                    this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
-                    window.location.reload();
+                    if (res.status == 200) {
+                        this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                        window.location.reload();
+                    }
+                })
+                })
+            }
+        },
+        onEditAch() {
+            if (this.imageAch == ''){
+                AchievementService.put(this.row).then((res) => {
+                    if (res.status == 200) {
+                        this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                        window.location.reload();
+                    }
+                })
+            }
+            else {
+                this.multipartFile.image = this.imageAch;
+                BlogService.uploadImage(this.multipartFile).then((res) => {
+                    this.row.url = res.data.data.display_url;
+                    AchievementService.put(this.row).then((res) => {
+                    if (res.status == 200) {
+                        this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                        window.location.reload();
+                    }
                 })
                 })
             }
@@ -302,9 +433,12 @@ export default {
                 icon: 'pi pi-info-circle',
                 acceptClass: 'p-button-danger',
                 accept: () => {
-                    BlogService.deleteBlog(id);
-                    this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
-                    window.location.reload();
+                    BlogService.deleteBlog(id).then((res) => {
+                        if (res.status == 200) {
+                            this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
+                            window.location.reload();
+                        }
+                    })
                 },
                 reject: () => {
                     this.$toast.add({severity:'error', summary:'Rejected', detail:'You have rejected', life: 3000});
@@ -318,9 +452,31 @@ export default {
                 icon: 'pi pi-info-circle',
                 acceptClass: 'p-button-danger',
                 accept: () => {
-                    ActivityService.deleteActivity(id);
-                    this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
-                    window.location.reload();
+                    ActivityService.deleteActivity(id).then((res) => {
+                        if (res.status == 200) {
+                            this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
+                            window.location.reload();
+                        }
+                    })
+                },
+                reject: () => {
+                    this.$toast.add({severity:'error', summary:'Rejected', detail:'You have rejected', life: 3000});
+                }
+            });
+        },
+        deleteAch(id) {
+            this.$confirm.require({
+                message: 'Do you want to delete this record?',
+                header: 'Delete Confirmation',
+                icon: 'pi pi-info-circle',
+                acceptClass: 'p-button-danger',
+                accept: () => {
+                    AchievementService.delete(id).then((res) => {
+                        if (res.status == 200) {
+                            this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
+                            window.location.reload();
+                        }
+                    });
                 },
                 reject: () => {
                     this.$toast.add({severity:'error', summary:'Rejected', detail:'You have rejected', life: 3000});
@@ -334,6 +490,9 @@ export default {
         }),
         ActivityService.getActivity().then((res) => {
             this.actWrap = res.data.data
+        }),
+        AchievementService.get().then((res) => {
+            this.achWrap = res.data.data
         })
     }
 }

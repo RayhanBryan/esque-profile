@@ -37,7 +37,7 @@
 
 <script>
 import image1 from "../assets/like1.png"
-
+import image2 from "../assets/act1.png"
 export default {
     data: () => ({
     items: [

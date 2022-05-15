@@ -24,6 +24,8 @@ import Password from 'primevue/password';
 import ConfirmationService from 'primevue/confirmationservice';
 import ConfirmDialog from 'primevue/confirmdialog';
 import ProgressSpinner from 'primevue/progressspinner';
+import Carousel from 'primevue/carousel';
+
 
 import 'aos/dist/aos.css'
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
@@ -55,7 +57,8 @@ app.component('DataTable', DataTable);
 app.component('Column', Column);
 app.component('Password', Password);
 app.component('ConfirmDialog', ConfirmDialog);
-app.component('ProgressSpinner', ProgressSpinner)
+app.component('ProgressSpinner', ProgressSpinner);
+app.component('Carousel', Carousel);
 app.use(PrimeVue);
 app.use(router);
 app.use(ToastService);

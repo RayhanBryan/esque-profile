@@ -1,0 +1,23 @@
+import axios from 'axios';
+
+const BASE_URL = 'http://localhost:9090/achievement/';
+
+class BlogService{
+    get(){
+        return axios.get(BASE_URL + 'findAllOrderBy')
+    }
+
+    post(data){
+        return axios.post(BASE_URL + 'post', data)
+    }
+
+    put(data){
+        return axios.put(BASE_URL + 'update', data)
+    }
+
+    delete(id){
+        return axios.delete(BASE_URL + `delete?id=${id}`)
+    }
+}
+
+export default new BlogService()
