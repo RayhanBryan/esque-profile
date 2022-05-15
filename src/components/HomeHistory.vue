@@ -11,7 +11,7 @@
                     </span>
                 </template>
                 <template #content="slotProps">
-                    <Card data-aos="zoom-in" style="background-color: #00A6A9; color: white;">
+                    <Card data-aos="zoom-in" data-aos-duration="2000" style="background-color: #00A6A9; color: white;">
                         <template #title>
                             {{slotProps.item.date}}
                         </template>

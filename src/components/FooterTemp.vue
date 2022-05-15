@@ -7,7 +7,7 @@
         </div>
         <div class="col-12 lg:col-4 tengah">
             <div class="grid">
-                <div class="col-2">
+                <div class="col-2 icon">
                     <img src="../assets/logo-phone.png" alt="" class="my-3" style="display: block">
                     <img src="../assets/logo-mail.png" alt="" class="my-3" style="display: block">
                     <img src="../assets/logo-privacy.png" alt="" class="my-3" style="display: block">
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="col-12 lg:col-4">
-            <p class="mt-4">Jl. Anggajaya 2 No.108b,<br>
+            <p class="lg:mt-4">Jl. Anggajaya 2 No.108b,<br>
 Sanggrahan, Condongcatur,<br>
 Kec. Depok, Kabupaten Sleman,<br> 
 Daerah Istimewa Yogyakarta 55281</p>
@@ -41,6 +41,13 @@ Daerah Istimewa Yogyakarta 55281</p>
         color: white;
         text-align: center;
     }
+
+    @media screen and (max-width: 480px) {
+        .icon {
+            display: none;
+        }
+    }
+
     @media screen and (min-width: 480px) {
          
     .tengah {

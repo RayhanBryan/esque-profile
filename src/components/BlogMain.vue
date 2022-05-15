@@ -1,13 +1,14 @@
 <template>
     <div class="grid justify-content-center">
         <div class="col-12 text-center">
-            <h1 style="color: #00535B">BLOG</h1>
+            <h1 style="color: #00535B" data-aos="zoom-in" data-aos-duration="2000">BLOG</h1>
             <hr>
         </div>
+        <ProgressSpinner style="width:50px;height:50px" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s" v-if="loading"/>
         <div class="col-12 lg:px-8 px-4">
-            <div class="grid content mb-4" v-for="i in blogWrap" :key="i.title">
+            <div class="grid content mb-4" v-for="i in blogWrap" :key="i.title"  data-aos="zoom-in" data-aos-duration="2000">
                 <div class="col-12 lg:col-4">
-                    <img :src="require('/assets/blog/'+ i.blogId + '.jpg')" alt="" style="width: 100%;">
+                    <img :src="i.url" alt="" style="width: 100%;">
                 </div>
                 <div class="col-12 lg:col-8">
                     <h1 class="my-0">{{ i.title }}</h1>
@@ -21,7 +22,7 @@
     <Dialog header="&nbsp" v-model:visible="display" :modal="true" class="dialog">
         <div class="inside-dialog">
             <h1 class="text-center" style="color: #00535B">{{row.title}}</h1>
-            <img :src="'../assets/blog/' + row.blogId + '.jpg'" alt="" style="float: left;" class="lg:mr-2">
+            <img :src="row.url" alt="" style="float: left;" class="lg:mr-2">
             <p class="m-0 dialog" v-html="row.textBlog"></p>
         </div>
     </Dialog>
@@ -108,13 +109,14 @@
                 row: {},
                 regex: '\n',
                 parser: new DOMParser(),
+                loading: true,
             }
         },
         methods: {
             getBlog() {
                 BlogService.getBlog().then((res) => {
                     this.blogWrap = res.data.data
-                    console.log(res)
+                    this.loading = false;
                     console.log(this.blogWrap)
                 })
             },
@@ -127,9 +129,14 @@
                 console.log(this.row.textBlog, 'ini row')
                 this.display = true;
             },
+            loadingFalse(){
+                this.loading=false;
+                this.loadBlog=true;
+                console.log(this.loadBlog, 'ini loadblog')
+            }
         },
         created() {
-            this.getBlog()
+            this.getBlog();
         }
     }
 </script>

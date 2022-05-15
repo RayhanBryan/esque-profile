@@ -1,12 +1,12 @@
 <template>
     <div class="grid justify-content-center text-center">
         <div class="col-12">
-            <h1>MEET OUR SUPER TEAM</h1>
+            <h1 data-aos="zoom-in" data-aos-duration="2000">MEET OUR SUPER TEAM</h1>
             <hr>
         </div>
     </div>
     <div class="grid justify-content-center text-center px-4 lg:px-8">
-        <div class="col-12 lg:col-6 lg:px-4" v-for="item in items" :key="item.name">
+        <div class="col-12 lg:col-6 lg:px-4" v-for="item in items" :key="item.name" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300">
             <img :src="item.photo" alt="">
             <h3>{{ item.name }}</h3>
             <hr class="hr-team">

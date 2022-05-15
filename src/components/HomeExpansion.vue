@@ -1,5 +1,5 @@
 <template>
-    <div class="grid">
+    <div class="grid" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-12 text-center title">
             <h1>WILAYAH EKSPANSI ESQUE</h1>
             <hr>
@@ -54,6 +54,8 @@ padding-bottom: 200px;
 
 <script>
     export default {
-
+        mounted(){
+        AOS.init();
+    }
     }
 </script>

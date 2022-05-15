@@ -1,24 +1,24 @@
 <template>
     <div class="grid justify-content-center lg:px-8">
         <div class="col-12 text-center title">
-            <h1>ACHIEVMENT</h1>
+            <h1 data-aos="zoom-in" data-aos-duration="2000">ACHIEVMENT</h1>
             <hr>
         </div>
         <div class="col-12 lg:col-5 text-center">
-            <img src="../assets/award1.png" alt="" style="border-radius: 20px; max-width: 100%;">
-            <h2>
+            <img src="../assets/award1.png" alt="" style="border-radius: 20px; max-width: 100%;" data-aos="zoom-in" data-aos-duration="2000">
+            <h2 data-aos="zoom-in" data-aos-duration="2000">
                 Shopee Super<br>Awards 2021
             </h2>
         </div>
         <div class="col-12 lg:col-5 lg:col-offset-2 text-center">
-            <img src="../assets/award3.png" alt="" style="border-radius: 20px; max-width: 100%;">
-            <h2>
+            <img src="../assets/award3.png" alt="" style="border-radius: 20px; max-width: 100%;" data-aos="zoom-in" data-aos-duration="2000">
+            <h2 data-aos="zoom-in" data-aos-duration="2000">
                 Sponsorship<br>PPKI 2021/2022
             </h2>
         </div>
         <div class="col-12 lg:col-6 gambar-tengah text-center">
-            <img src="../assets/award2.png" alt="" style="border-radius: 20px; max-width: 100%;">
-            <h2>
+            <img src="../assets/award2.png" alt="" style="border-radius: 20px; max-width: 100%;" data-aos="zoom-in" data-aos-duration="2000">
+            <h2 data-aos="zoom-in" data-aos-duration="2000">
                 Idola Baru<br>Grabfood 2021
             </h2>
         </div>
@@ -51,6 +51,8 @@
 
 <script>
 export default {
-    
+        mounted(){
+        AOS.init();
+    }
 }
 </script>
