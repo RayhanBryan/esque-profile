@@ -28,6 +28,7 @@ public class TeamService {
         entity.setUrl(wrapper.getUrl());
         entity.setTitle(wrapper.getTitle());
         entity.setTextTeam(wrapper.getTextTeam());
+        entity.setPosition(wrapper.getPosition());
         return entity;
     }
 
@@ -37,6 +38,7 @@ public class TeamService {
         wrapper.setUrl(entity.getUrl());
         wrapper.setTitle(entity.getTitle());
         wrapper.setTextTeam(entity.getTextTeam());
+        wrapper.setPosition(entity.getPosition());
         return wrapper;
     }
 

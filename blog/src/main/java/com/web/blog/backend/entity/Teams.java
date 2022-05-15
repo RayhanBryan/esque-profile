@@ -20,4 +20,6 @@ public class Teams {
     private String title;
     @Column(name = "TEXT_ACHIEVEMENT")
     private String textTeam;
+    @Column(name = "POSITIONS")
+    private String position;
 }

@@ -10,4 +10,5 @@ public class TeamWrapper {
     private String url;
     private String title;
     private String textTeam;
+    private String position;
 }
