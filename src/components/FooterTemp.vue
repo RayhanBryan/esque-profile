@@ -3,6 +3,7 @@
         <div class="col-12 lg:col-4">
             <img src="../assets/logo-pt.png" alt="" style="display: inline">
             <p style="display: inline-block">PT. KEBERKAHAN<br>TUJUAN<br>UTAMA</p>
+            <br>
             <img src="../assets/logo-esque-full.png" alt="">
         </div>
         <div class="col-12 lg:col-4 tengah">

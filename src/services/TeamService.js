@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://esque-service.herokuapp.com:443/achievement/';
+const BASE_URL = 'https://esque-service.herokuapp.com:443/team/';
 
-class AchievementService{
+class TeamService{
     get(){
         return axios.get(BASE_URL + 'findAllOrderBy')
     }
@@ -20,4 +20,4 @@ class AchievementService{
     }
 }
 
-export default new AchievementService()
+export default new TeamService()

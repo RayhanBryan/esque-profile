@@ -2,7 +2,7 @@
     <form enctype="multipart/form-data">
         <div class="grid">
             <div class="col-12">
-                <Button label="Logout" style="background-color: #FFC800; float: right;" @click="logout"/>
+                <Button label="Logout" style="background-color: #FFC800; float: right;" @click="logout" />
             </div>
             <div class="col-12">
                 <h1 class="text-center">BLOG CONTROLLER</h1>
@@ -161,6 +161,57 @@
         </DataTable>    
         </div>
     </div>
+    <div class="grid">
+        <div class="col-12">
+            <h1 class="text-center">TEAM CONTROLLER</h1>
+        </div>
+        <div class="col-12">
+            <h2>Name</h2>
+            <InputText type="text" v-model="newTeam.title" />
+        </div>
+        <div class="col-12">
+            <h2>Position</h2>
+            <InputText type="text" v-model="newTeam.position" />
+        </div>
+        <div class="col-12">
+            <h2>Testimoni</h2>
+            <Textarea v-model="newTeam.textTeam" :autoResize="true" rows="5" cols="30" />
+        </div>
+        <div class="col-12">  
+    <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" @change="onChangeTeam" /></td>
+        </tr>
+    </table>
+        </div>
+        <div class="col-12">
+            <Button label="Post now" style="background-color: #FFC800" @click="onUploadTeam"/>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-12">
+            <DataTable :value="teamWrap" :paginator="true" :rows="4"
+            paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+            :rowsPerPageOptions="[4,10,20]" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords}">
+            <Column field="title" header="Title"></Column>
+            <Column field="position" header="Position"></Column>
+            <Column field="textTeam" header="Testimoni"></Column>
+            <Column header="Image">
+                <template #body="slotProps">
+                    <img :src="slotProps.data.url" :alt="slotProps.data.image" class="product-image" />
+                </template>
+            </Column>
+            <Column header="Action">
+                <template #body="slotProps">
+                    <Button type="button" icon="pi pi-pencil" @click="openMaximizableTeam(slotProps.data)" />
+                    <Button type="button" icon="pi pi-trash" @click="deleteTeam(slotProps.data.teamId)" class="p-button-danger" />
+                </template>
+            </Column>
+        </DataTable>    
+        </div>
+    </div>
     <Dialog header="&nbsp" v-model:visible="displayMaximizable" :style="{width: '50vw'}" :maximizable="true" :modal="true">
             <h5 class="mb-1">Title</h5>
             <InputText type="text" v-model="row.title" />
@@ -207,6 +258,24 @@
                 <Button label="Submit" icon="pi pi-check" @click="onEditAch(); displayMaximizableAct=false" autofocus />
             </template>
         </Dialog>
+        <Dialog header="&nbsp" v-model:visible="displayMaximizableTeam" :style="{width: '50vw'}" :maximizable="true" :modal="true">
+            <h5 class="mb-1">Title</h5>
+            <InputText type="text" v-model="row.title" />
+            <h5 class="mb-1">Position</h5>
+            <InputText type="text" v-model="row.position" />
+            <h5 class="mb-1">Testimoni</h5>
+            <Textarea v-model="row.textTeam" :autoResize="true" rows="10" cols="50" />
+            <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" @change="onChangeTeam" /></td>
+        </tr>
+    </table>
+            <template #footer>
+                <Button label="Cancel" icon="pi pi-times" @click="displayMaximizableTeam=false " class="p-button-text"/>
+                <Button label="Submit" icon="pi pi-check" @click="onEditTeam(); displayMaximizableTeam=false" autofocus />
+            </template>
+        </Dialog>
         <Toast />
         <ConfirmDialog></ConfirmDialog>
 </template>
@@ -218,7 +287,8 @@
 <script>
 import ActivityService from '@/services/ActivityService';
 import BlogService from '../services/BlogService';
-import AchievementService from '../services/AchievementService'
+import AchievementService from '../services/AchievementService';
+import TeamService from '../services/TeamService';
 import ConfirmDialog from 'primevue/confirmdialog';
 
 export default {
@@ -263,9 +333,11 @@ export default {
             displayMaximizable: false,
             displayMaximizableAct: false,
             displayMaximizableAch: false,
+            displayMaximizableTeam: false,
             row: {},
             actWrap: [{}],
-            achWrap: [{}]
+            achWrap: [{}],
+            teamWrap: [{}],
         }
     },
     methods: {
@@ -309,6 +381,21 @@ export default {
             })
             
         },
+        onUploadTeam(){
+            this.multipartFileTeam.image = this.imageTeam;
+            BlogService.uploadImage(this.multipartFileTeam).then((res) => {
+                this.newTeam.url = res.data.data.display_url;
+                TeamService.post(this.newTeam).then((res) => {
+                    console.log(res);
+                    if (res.status == 200){
+                        this.$toast.add({severity: 'success', summary: 'Success', detail: 'Activity Added', life: 3000});
+                        window.location.reload()
+                    }
+                })
+                
+            })
+            
+        },
         load(index) {
             this.loading[index] = true;
             setTimeout(() => this.loading[index] = false, 1000);
@@ -340,7 +427,10 @@ export default {
             this.row = {...row}
             this.displayMaximizableAch = true;
         },
-
+        openMaximizableTeam(row) {
+            this.row = {...row}
+            this.displayMaximizableTeam = true;
+        },
         onChangeBlog(element) {
             var file = element.target.files[0];
             this.imageBlog = file;
@@ -353,6 +443,10 @@ export default {
         onChangeAch(element) {
             var file = element.target.files[0];
             this.imageAch = file;
+        },
+        onChangeTeam(element) {
+            var file = element.target.files[0];
+            this.imageTeam = file;
         },
 
         onEditBlog() {
@@ -388,10 +482,32 @@ export default {
                 })
             }
             else {
-                this.multipartFile.image = this.imageAct;
-                BlogService.uploadImage(this.multipartFile).then((res) => {
+                this.multipartFileAct.image = this.imageAct;
+                BlogService.uploadImage(this.multipartFileAct).then((res) => {
                     this.row.url = res.data.data.display_url;
                     ActivityService.putActivity(this.row).then((res) => {
+                    if (res.status == 200) {
+                        this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                        window.location.reload();
+                    }
+                })
+                })
+            }
+        },
+        onEditTeam() {
+            if (this.imageTeam == ''){
+                TeamService.put(this.row).then((res) => {
+                    if (res.status == 200) {
+                        this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
+                        window.location.reload();
+                    }
+                })
+            }
+            else {
+                this.multipartFileTeam.image = this.imageTeam;
+                BlogService.uploadImage(this.multipartFileTeam).then((res) => {
+                    this.row.url = res.data.data.display_url;
+                    TeamService.put(this.row).then((res) => {
                     if (res.status == 200) {
                         this.$toast.add({severity:'success', summary: 'Success', detail:'Activity Edited', life: 3000});
                         window.location.reload();
@@ -410,8 +526,8 @@ export default {
                 })
             }
             else {
-                this.multipartFile.image = this.imageAch;
-                BlogService.uploadImage(this.multipartFile).then((res) => {
+                this.multipartFileAch.image = this.imageAch;
+                BlogService.uploadImage(this.multipartFileAch).then((res) => {
                     this.row.url = res.data.data.display_url;
                     AchievementService.put(this.row).then((res) => {
                     if (res.status == 200) {
@@ -483,6 +599,25 @@ export default {
                 }
             });
         },
+        deleteTeam(id) {
+            this.$confirm.require({
+                message: 'Do you want to delete this record?',
+                header: 'Delete Confirmation',
+                icon: 'pi pi-info-circle',
+                acceptClass: 'p-button-danger',
+                accept: () => {
+                    TeamService.delete(id).then((res) => {
+                        if (res.status == 200) {
+                            this.$toast.add({severity:'info', summary:'Confirmed', detail:'Record deleted', life: 3000});
+                            window.location.reload();
+                        }
+                    });
+                },
+                reject: () => {
+                    this.$toast.add({severity:'error', summary:'Rejected', detail:'You have rejected', life: 3000});
+                }
+            });
+        },
     },
     mounted() {
         BlogService.getBlog().then((res) => {
@@ -493,6 +628,9 @@ export default {
         }),
         AchievementService.get().then((res) => {
             this.achWrap = res.data.data
+        }),
+        TeamService.get().then((res) => {
+            this.teamWrap = res.data.data
         })
     }
 }

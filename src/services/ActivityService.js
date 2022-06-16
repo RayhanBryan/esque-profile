@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://esque-service.herokuapp.com:443/activity/';
 
-class BlogService{
+class ActivityService{
     getActivity(){
         return axios.get(BASE_URL + 'findAllOrderBy')
     }
@@ -20,4 +20,4 @@ class BlogService{
     }
 }
 
-export default new BlogService()
+export default new ActivityService()

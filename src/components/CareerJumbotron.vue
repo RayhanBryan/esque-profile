@@ -12,8 +12,11 @@
         </div>
     </div>
     <div class="grid">
-        <div class="col-12 py-0 join-us text-center justify-content-center">
-            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
+        <div class="col-12 py-0 join-us text-center justify-content-center" v-if="!mobile">
+            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 300px; height: 100px" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
+        </div>
+        <div class="col-12 py-0 join-us text-center justify-content-center" v-if="mobile">
+            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 200px; height: 50px" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
         </div>
     </div>
 </template>
@@ -45,11 +48,10 @@
         background-color: #00A6A9;
     }
     .p-button {
-        margin-top: 120px;
+        margin-top: 5%;
         color: #00535B;
         font-weight: 700;
         border: none;
-        width: 120px;
     }
     @media screen and (max-width: 480px) {
         .text {
@@ -78,10 +80,29 @@
 
 <script>
 export default {
+    data() {
+            return {
+                mobile : true
+            }
+    },
     methods: {
     toForm(){
         window.location.assign("https://www.w3schools.com")
-    }
+    },
+    onResize() {
+                if (window.innerWidth < 960) {
+                    this.mobile = true
+                } else {
+                    this.mobile = false
+                }
+            }
   },
+  created() {
+    if (screen.width < 480 ){
+                this.mobile = true;
+            } else {
+                this.mobile = false;
+            }
+  }
 }
 </script>

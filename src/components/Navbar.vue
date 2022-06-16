@@ -20,10 +20,21 @@
     font-weight: 700;
 }
 
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+  ::v-deep(.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon) {
     color: #6c757d;
     display: none !important;
+    margin-right: 0;
   }
+
+  ::v-deep(.p-menubar .p-menuitem-link .p-menuitem-icon) {
+    color: #6c757d;
+    margin-right: 0;
+}
+
+::v-deep(.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link) {
+    float: right;
+}
+  
   .p-menubar ul {
     margin: 0;
     padding: 0;
