@@ -5,7 +5,7 @@
             <hr>
         </div>
         <div class="grid justify-content-center">
-            <div class="col-12">
+            <div class="col-12 px-2">
                 <ProgressSpinner style="width:50px;height:50px" strokeWidth="8" fill="var(--surface-ground)"
                     animationDuration=".5s" v-if="loading" />
                 <Carousel :value="achWrap" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions"
