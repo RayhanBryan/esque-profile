@@ -27,12 +27,12 @@
                     </div>
                 </template>
             </Carousel>
-    <div class="grid" data-aos="zoom-in" data-aos-duration="2000">
+    <!-- <div class="grid" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-12 text-center">
             <Button label="SEE MORE" v-if="!seeMore" @click="isSeeMore()" />
             <Button label="SEE LESS" v-if="seeMore" @click="isSeeMore()" />
         </div>
-    </div>
+    </div> -->
     </div>
 </template>
 
