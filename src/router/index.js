@@ -15,11 +15,6 @@ if(localStorage.getItem('LoggedUser'))
   next('/login');
 }
 
-router.beforeEach((to, from, next) => {
-  document.title = 'ESQUE';
-  next();
-});
-
 const routes = [
   {
     path: '/',
