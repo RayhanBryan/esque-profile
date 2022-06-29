@@ -29,9 +29,9 @@ Daerah Istimewa Yogyakarta 55281</p>
     </div>
     <div class="grid justify-content-center">
         <div class="col-12 lg:col-6 justify-content-center text-center">
-            <img src="../assets/logo-tiktok.png" alt="">
-            <img src="../assets/logo-ig.png" alt="" class="lg:mx-8 mx-2">
-            <img src="../assets/logo-linkedin.png" alt="">
+            <a href="https://vt.tiktok.com/ZSdunyPA8/" target="_blank"><img src="../assets/logo-tiktok.png" alt=""></a>
+            <a href="https://www.instagram.com/esque.id/" target="_blank"><img src="../assets/logo-ig.png" alt="" class="lg:mx-8 mx-2"></a>
+            <a href="https://www.linkedin.com/company/pt-keberkahan-tujuan-utama/" target="_blank"><img src="../assets/logo-linkedin.png" alt=""></a>
         </div>
     </div>
 </template>

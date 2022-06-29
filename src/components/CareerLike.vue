@@ -72,7 +72,7 @@ export default {
             text: "Lorem"
         },
         {
-            photo: image1,
+            photo: image2,
             text: "Lorem"
         },
         {
@@ -108,32 +108,6 @@ export default {
                     numScroll: 1
                 }
             ],
-    moreItems: [
-        {
-            photo: image1,
-            text: "Lorem"
-        },
-        {
-            photo: image1,
-            text: "Lorem"
-        },
-        {
-            photo: image1,
-            text: "Lorem"
-        },
-        {
-            photo: image1,
-            text: "Lorem"
-        },
-        {
-            photo: image1,
-            text: "Lorem"
-        },
-        {
-            photo: image1,
-            text: "Lorem"
-        },
-    ],
 
     seeMore: false
     }),

@@ -86,8 +86,10 @@
                 {date: '12 Juni 2019', color: '#00A6A9', text: "Pembukaan Outlet pertama di Yogyakarta dengan brand Ngelak"},
                 {date: 'Desember 2020', color: '#00A6A9', text: "Ngelak melakukan perubahan dan pengembangan, re-brending menjadi ESQUE INDONESIA"},
                 {date: 'Januari 2021', color: '#00A6A9', text: "Resmi menjadi Perusahaan berbadan hukum yaitu PT Keberkahaan Tujuan Utama, Jumlah 16 Outlet di Yogyakarta "},
+                {date: 'Juni 2021', color: '#00A6A9', text: "Pembukaan cabang pertama di Semarang Raya"},
                 {date: 'November 2021', color: '#00A6A9', text: "Pembukaan cabang pertama di Solo Raya"},
-                {date: 'Juni 2021', color: '#00A6A9', text: "Pembukaan cabang pertama di Semarang Raya "},
+                {date: 'Februari 2022', color: '#00A6A9', text: "Pembukaan cabang pertama di Kota Kudus"},
+                {date: 'Maret 2022', color: '#00A6A9', text: "Pembukaan cabang pertama di Kota Malang"},
             ],
                 dates: [
                     "2020", "2021", "2022", "2023"
