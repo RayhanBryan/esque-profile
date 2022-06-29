@@ -15,12 +15,12 @@
         </div>
     </div> -->
     <Carousel :value="items" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions"
-                :circular="true">
+                :circular="true"  style="max-width: 90%;">
                 <template #item="slotProps">
                     <div class="product-item">
                         <div class="product-item-content text-center">
                             <div>
-                                <img :src="slotProps.data.photo" alt="" style="border-radius: 20px; max-width: 90%;">
+                                <img :src="slotProps.data.photo" alt="" style="border-radius: 20px; max-height: 200px;">
                                 <h3 class="mb-1">{{slotProps.data.text}}</h3>
                             </div>
                         </div>
@@ -62,34 +62,69 @@
 </style>
 
 <script>
-import image1 from "../assets/like1.png"
-import image2 from "../assets/act1.png"
+import image1 from "../assets/career/1.jpg"
+import image2 from "../assets/career/2.jpg"
+import image3 from "../assets/career/3.jpg"
+import image4 from "../assets/career/4.jpg"
+import image5 from "../assets/career/5.jpg"
+import image6 from "../assets/career/6.jpg"
+import image7 from "../assets/career/7.jpg"
+import image8 from "../assets/career/8.jpg"
+import image9 from "../assets/career/9.jpg"
+import image10 from "../assets/career/10.jpg"
+import image11 from "../assets/career/11.jpg"
+import image12 from "../assets/career/12.jpg"
+
 export default {
     data: () => ({
     items: [
         {
             photo: image1,
-            text: "Lorem"
+            text: "Active & Energic"
         },
         {
             photo: image2,
-            text: "Lorem"
+            text: "Trendy & Up To Date"
         },
         {
-            photo: image1,
-            text: "Lorem"
+            photo: image3,
+            text: "Growth Learning"
         },
         {
-            photo: image1,
-            text: "Lorem"
+            photo: image4,
+            text: "Creative & Innovative"
         },
         {
-            photo: image1,
-            text: "Lorem"
+            photo: image5,
+            text: "Helping others & Spread kindness"
         },
         {
-            photo: image1,
-            text: "Lorem"
+            photo: image6,
+            text: "Helping others"
+        },
+        {
+            photo: image7,
+            text: "Joy & Positive"
+        },
+        {
+            photo: image8,
+            text: "Loyal & Dedicated"
+        },
+        {
+            photo: image9,
+            text: "Prayhard, Workhard"
+        },
+        {
+            photo: image10,
+            text: "Proffesional & Intergrity"
+        },
+        {
+            photo: image11,
+            text: "Respect "
+        },
+        {
+            photo: image12,
+            text: "Responsible & Consistent"
         },
     ],
     responsiveOptions: [{
