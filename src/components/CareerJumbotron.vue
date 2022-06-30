@@ -13,10 +13,10 @@
     </div>
     <div class="grid">
         <div class="col-12 py-0 join-us text-center justify-content-center" v-if="!mobile">
-            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 300px; height: 100px" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
+            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 300px; height: 100px" onclick="window.open('https://forms.gle/Tag41jUryUT8XamM8')" />
         </div>
         <div class="col-12 py-0 join-us text-center justify-content-center" v-if="mobile">
-            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 200px; height: 50px" onclick="window.open('https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign')" />
+            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 200px; height: 50px" onclick="window.open('https://forms.gle/Tag41jUryUT8XamM8')" />
         </div>
     </div>
 </template>
