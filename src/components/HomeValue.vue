@@ -79,7 +79,7 @@ export default {
     values : [
       {
         title: "Live After Life",
-        text: "Selalu melibatkan Allah SWT dalam menjalankan kehidupan personal dan pekerjaan. Menjalankan kewajiban dan sunnah yang diperintahkan/ dianjurkan oleh ajaran agama Islam yang diimplementasikan dalam bentuk perilaku, perkataan maupun perbuatan. Menjadikan pekerjaan yang dilaksanakan sebagai ibadah, menjadi jalan mencari ridho dan berkah dari Allah swt dalam setiap pekerjaan yang dilakukan.",
+        text: "Selalu melibatkan Allah SWT dalam menjalankan kehidupan personal dan pekerjaan.",
         image: image1
       },
       {

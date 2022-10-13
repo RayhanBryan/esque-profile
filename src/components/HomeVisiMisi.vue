@@ -2,7 +2,7 @@
     <div class="grid justify-content-center">
         <div class="col-12 lg:col-3 text-center lg:my-8">
             <h1 data-aos="zoom-in" data-aos-duration="2000">VISI</h1>
-            <p data-aos="zoom-in" data-aos-duration="2000">“Menebarkan Kebahagiaan dengan Menjadi Business Opportunity yang Menguntungkan bagi Semua Stakeholder”</p>
+            <p data-aos="zoom-in" data-aos-duration="2000">Menebar kebahagiaan, manfaat dan menjadi inspirasi kebaikan bagi pemuda.</p>
             <h1 data-aos="zoom-in" data-aos-duration="2000">MISI</h1>
             <ol  data-aos="zoom-in" data-aos-duration="2000" class="text-left">
                 <li>Mengutamakan pelayanan service excellent dan memudahkan Customer dalam menikmati/mendapatkan produk ESQUE.</li>

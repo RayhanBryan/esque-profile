@@ -90,6 +90,7 @@
                 {date: 'November 2021', color: '#00A6A9', text: "Pembukaan cabang pertama di Solo Raya"},
                 {date: 'Februari 2022', color: '#00A6A9', text: "Pembukaan cabang pertama di Kota Kudus"},
                 {date: 'Maret 2022', color: '#00A6A9', text: "Pembukaan cabang pertama di Kota Malang"},
+                {date: 'Agustus 2022', color: '#00A6A9', text: "Esque memiliki 37 cabang"},
             ],
                 dates: [
                     "2020", "2021", "2022", "2023"

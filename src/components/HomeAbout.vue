@@ -2,13 +2,13 @@
     <div class="grid justify-content-center">
         <div class="col-12 lg:col-6 text-center px-4 lg:px-0 lg:my-8">
             <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300">ABOUT</h1>
-            <p data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300">Merupakan brand minuman kekinian dalam naungan PT. Keberkahan Tujuan Utama, ESQUE INDONESIA bergerak di bidang Food & Beverages. Berkomitmen untuk menginspirasi Anak Muda Indonesia untuk selalu meningkatkan ketaqwaan dengan harapan menjadi pemuda yang bermanfaat dan menebar kebahagiaan bagi sesama.
+            <p data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300">Merupakan brand minuman kekinian dalam naungan PT. Keberkahan Tujuan Utama, ESQUE INDONESIA bergerak di bidang Food & Beverages. Berkomitmen untuk menebar kebahagiaan, manfaat, dan menginspirasi anak muda Indonesia dengan harapan menjadi pemuda yang bermanfaat dan menebar kebahagiaan bagi sesama.
 <br>
 <br>
-ESQUE INDONESIA sebagai Spiritual Company, memiliki tujuan memberikan manfaat bagi masyarakat yang lebih luas dengan menjalankan beberapa program. Kami percaya nilai Agama dan pengetahuan bisnis adalah dua pilar utama. Komitmen untuk Amanah dan Profesional dalam mengelola dana Invetasi, menjadi modal untuk menggapai Keberkahan dari Allah Subhannahu wata’ala.
+Esque Indonesia mengusung konsep spiritual company dengan value live after life, yang bertujuan agar terbentuk lingkungan kerja yang sesuai dengan culture islami, dari sini terbentuk lah beberapa program pendukung, seperti Kajian, Tahsin al-Quran, Mabit (Malam bina iman dan Taqwa), OTW Ngopi (Orang Taqwa Ngobrol Perkara Iman), Esque Berbagi (berbagi nasi kotak setiap jumat), Esque Peduli dll. Selain itu ESQUE juga ada value growth and learning untuk meningkatkan hard skill maupun soft skill, dengan beragam program pengembangan seperti training, beasiswa, dan positive challenge.
 <br>
 <br>
-Esque timbul pertama kali di Condongcatur Yogyakarta pada tanggal 12 Juni 2019, hingga kini Esque memiliki 30+ outlet yang tersebar di wilayah DI Yogyakata, Jawa Tengah dan Jawa Timur (Yogyakarta, Semarang, Solo, Kudus, dan Malang). Esque akan terus mengembangkan timbul timbul ke seluruh Indonesia.
+Esque  pertama kali hadir di Yogyakarta pada tanggal 12 Juni 2019, hingga kini Esque memiliki 30+ outlet yang tersebar di wilayah DI Yogyakata, Jawa Tengah dan Jawa Timur (Yogyakarta, Semarang, Solo, Kudus, dan Malang). Esque akan terus mengembangkan timbul timbul ke seluruh Indonesia.
 </p>
         </div>
     </div>
