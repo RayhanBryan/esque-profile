@@ -40,15 +40,16 @@ wujud pemenuhan Kesehatan seluruh ESQUE SQUAD.
             <img src="../assets/get3.png" alt="" style="width: 100%; height: 100%;">
         </div>
         <div class="col-12 lg:col-6 px-0 text-center" style="background-color: #00A6A9; color: white;">
-            <h2 data-aos="zoom-in" data-aos-duration="2000">WORK LIFE INTERGRATION</h2>
+            <h2 data-aos="zoom-in" data-aos-duration="2000">PENGEMBANGAN DIRI & KARIR</h2>
             <hr>
-            <p data-aos="zoom-in" data-aos-duration="2000" class="lg:mx-8 mx-5 lg:mt-8">Work Hard, Pray Hard!
-                Kinerja yang optimal memang penting, begitu juga
-                kehidupan seluruh keluarga besar ESQUE INDONESIA,
-                Esque menyediakan fasilitas untuk mengembangkan hobi dan
-                juga fasilitas untuk meningkatkan kecerdasan spiritual. Sehingga tidak
-                hanya kinerja yang optimal namun Ibadah juga maksimal,
-                sehingga kehidupan menjadi lebih berkualitas.</p>
+            <p data-aos="zoom-in" data-aos-duration="2000" class="lg:mx-8 mx-5 lg:mt-8">Berkembang adalah DNA ESQUE
+Sebagai perusahaan yang berkembang, pengembangan diri 
+bagi ESQUE Squad menjadi hal yang wajib. 
+ESQUE menyediakan fasilitas melakukan 
+pengembangan diri melalui beragam kegiatan seperti Training, 
+kelas rutin mingguan, beasiswa bagi karyawan, 
+dan program pengembangan karir.
+</p>
         </div>
     </div>
 </template>
