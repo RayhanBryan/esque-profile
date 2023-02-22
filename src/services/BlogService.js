@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://esque-service.herokuapp.com:443/blog/';
+const BASE_URL = 'https://esque-server-production.up.railway.app/blog/';
 
 class BlogService{
     getBlog(){

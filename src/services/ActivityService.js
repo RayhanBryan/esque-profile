@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://esque-service.herokuapp.com:443/activity/';
+const BASE_URL = 'https://esque-server-production.up.railway.app/activity/';
 
 class ActivityService{
     getActivity(){
