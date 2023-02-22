@@ -12,7 +12,7 @@ function guardMyroute(to, from, next)
 if(localStorage.getItem('LoggedUser'))
   next();
  else
-  next('/login');
+  next('/loginesqueadmin2023');
 }
 
 const routes = [
@@ -43,8 +43,8 @@ const routes = [
     component: ActivityView
   },
   {
-    path: '/login',
-    name: 'login',
+    path: '/loginesqueadmin2023',
+    name: 'loginesqueadmin2023',
     component: LoginView
   }
 ]

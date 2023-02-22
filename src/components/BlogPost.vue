@@ -540,7 +540,7 @@ export default {
         },
         logout(){
             localStorage.removeItem("LoggedUser");
-            this.$router.push('login')
+            this.$router.push('loginesqueadmin2023')
         },
         deleteBlog(id) {
             this.$confirm.require({
