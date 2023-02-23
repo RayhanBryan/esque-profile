@@ -32,8 +32,8 @@ const routes = [
     component: BlogView
   },
   {
-    path: '/admin',
-    name: 'admin',
+    path: '/adminesqueadmin2023',
+    name: 'adminesqueadmin2023',
     beforeEnter : guardMyroute,
     component: AdminView
   },

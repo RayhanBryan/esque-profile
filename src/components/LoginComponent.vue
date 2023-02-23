@@ -29,7 +29,7 @@ export default {
                 if (this.password == res.data.data[0].password) {
                     localStorage.setItem('LoggedUser', 'x');
                     this.$toast.add({severity: 'success', summary: 'Success', detail: 'Login sukses', life: 3000});
-                    this.$router.push('admin')
+                    this.$router.push('adminesqueadmin2023')
                 }
                 else {
                     this.$toast.add({severity: 'warning', summary: 'Wrong', detail: 'Password salah', life: 3000});
