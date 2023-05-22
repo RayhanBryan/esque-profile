@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://esque-server-production.up.railway.app/blog/';
+const BASE_URL = 'https://api-esque.vercel.app/blog/';
 
 class BlogService{
     getBlog(){
