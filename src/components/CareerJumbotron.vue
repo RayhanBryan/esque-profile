@@ -13,10 +13,10 @@
     </div>
     <div class="grid">
         <div class="col-12 py-0 join-us text-center justify-content-center" v-if="!mobile">
-            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 300px; height: 100px" onclick="window.open('http://Bit.ly/DaftarSeleksiKerja" />
+            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 300px; height: 100px" onclick="window.open('Bit.ly/DaftarSeleksiKerjaESQUE')" />
         </div>
         <div class="col-12 py-0 join-us text-center justify-content-center" v-if="mobile">
-            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 200px; height: 50px" onclick="window.open('http://Bit.ly/DaftarSeleksiKerja" />
+            <Button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300" label="JOIN US" style="background-color: #FFC800; width: 200px; height: 50px" onclick="window.open('Bit.ly/DaftarSeleksiKerjaESQUE')" />
         </div>
     </div>
 </template>
