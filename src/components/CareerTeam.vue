@@ -11,8 +11,8 @@
             <img :src="item.url" alt="">
             <h3>{{ item.title }}</h3>
             <hr class="hr-team">
-            <p class="text-post"><i>{{item.position}}</i></p>
-            <p>{{ item.textTeam }}</p>
+            <p class="text-post"><i>{{item.positions}}</i></p>
+            <p>{{ item.textAchievement }}</p>
         </div>
     </div>
     <div class="grid justify-content-center" v-if="!display">
