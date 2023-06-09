@@ -171,11 +171,11 @@
         </div>
         <div class="col-12">
             <h2>Position</h2>
-            <InputText type="text" v-model="newTeam.position" />
+            <InputText type="text" v-model="newTeam.positions" />
         </div>
         <div class="col-12">
             <h2>Testimoni</h2>
-            <Textarea v-model="newTeam.textTeam" :autoResize="true" rows="5" cols="30" />
+            <Textarea v-model="newTeam.textAchievement" :autoResize="true" rows="5" cols="30" />
         </div>
         <div class="col-12">  
     <table>
@@ -196,8 +196,8 @@
             :rowsPerPageOptions="[4,10,20]" responsiveLayout="scroll"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords}">
             <Column field="title" header="Title"></Column>
-            <Column field="position" header="Position"></Column>
-            <Column field="textTeam" header="Testimoni"></Column>
+            <Column field="positions" header="Position"></Column>
+            <Column field="textAchievement" header="Testimoni"></Column>
             <Column header="Image">
                 <template #body="slotProps">
                     <img :src="slotProps.data.url" :alt="slotProps.data.image" class="product-image" />
@@ -262,9 +262,9 @@
             <h5 class="mb-1">Title</h5>
             <InputText type="text" v-model="row.title" />
             <h5 class="mb-1">Position</h5>
-            <InputText type="text" v-model="row.position" />
+            <InputText type="text" v-model="row.positions" />
             <h5 class="mb-1">Testimoni</h5>
-            <Textarea v-model="row.textTeam" :autoResize="true" rows="10" cols="50" />
+            <Textarea v-model="row.textAchievement" :autoResize="true" rows="10" cols="50" />
             <table>
         <tr>
             <td><label path="file">Select a file to upload</label></td>
