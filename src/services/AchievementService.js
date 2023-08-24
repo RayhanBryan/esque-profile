@@ -1,23 +1,23 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'https://api-esque.vercel.app/achievement/';
+const BASE_URL = "https://be.esque.co.id/achievement/";
 
-class AchievementService{
-    get(){
-        return axios.get(BASE_URL + 'findAllOrderBy')
-    }
+class AchievementService {
+  get() {
+    return axios.get(BASE_URL + "findAllOrderBy");
+  }
 
-    post(data){
-        return axios.post(BASE_URL + 'post', data)
-    }
+  post(data) {
+    return axios.post(BASE_URL + "post", data);
+  }
 
-    put(data){
-        return axios.put(BASE_URL + 'update', data)
-    }
+  put(data) {
+    return axios.put(BASE_URL + "update", data);
+  }
 
-    delete(id){
-        return axios.delete(BASE_URL + `delete?id=${id}`)
-    }
+  delete(id) {
+    return axios.delete(BASE_URL + `delete?id=${id}`);
+  }
 }
 
-export default new AchievementService()
+export default new AchievementService();
